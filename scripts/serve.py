@@ -31,8 +31,19 @@ def project_root() -> Path:
     return Path(__file__).resolve().parent.parent
 
 
+def valid_port(value: str) -> int:
+    try:
+        port = int(value)
+    except ValueError as error:
+        raise argparse.ArgumentTypeError("port must be an integer") from error
+    if not 1 <= port <= 65535:
+        raise argparse.ArgumentTypeError("port must be between 1 and 65535")
+    return port
+
+
 def find_available_port(start_port: int) -> int:
-    for port in range(start_port, start_port + PORT_SEARCH_LIMIT):
+    end_port = min(start_port + PORT_SEARCH_LIMIT, 65536)
+    for port in range(start_port, end_port):
         with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as probe:
             try:
                 probe.bind((HOST, port))
@@ -49,7 +60,7 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run the PhotoClass local server.")
     parser.add_argument(
         "--port",
-        type=int,
+        type=valid_port,
         default=DEFAULT_PORT,
         help=f"preferred local port (default: {DEFAULT_PORT})",
     )

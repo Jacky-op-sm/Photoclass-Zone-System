@@ -642,137 +642,137 @@
   },
   {
     "id": "ref-appendices",
-    "number": 1,
+    "number": 13,
     "title": "Appendices",
     "type": "reference",
     "href": "book/OEBPS/xhtml/Appendices.xhtml",
-    "estimatedDays": 1,
+    "estimatedDays": 7,
     "priority": "reference",
     "checkpoints": [
       {
-        "id": "ref-appendices-checkpoint-01",
-        "title": "Appendix A Color Management, Profiles, and Color Spaces",
-        "href": "book/OEBPS/xhtml/appA.xhtml"
+        "id": "ref-appendices-checkpoint-A",
+        "title": "Appendix A: Color Management, Profiles, and Color Spaces",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixA"
       },
       {
-        "id": "ref-appendices-checkpoint-02",
-        "title": "Appendix B A Primer on Studio Lighting Photography",
-        "href": "book/OEBPS/xhtml/appB.xhtml"
+        "id": "ref-appendices-checkpoint-B",
+        "title": "Appendix B: A Primer on Studio Lighting Photography",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixB"
       },
       {
-        "id": "ref-appendices-checkpoint-03",
-        "title": "Appendix C What Is a Pixel?",
-        "href": "book/OEBPS/xhtml/appC.xhtml"
+        "id": "ref-appendices-checkpoint-C",
+        "title": "Appendix C: What Is a Pixel?",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixC"
       },
       {
-        "id": "ref-appendices-checkpoint-04",
-        "title": "Appendix D Bit Depth",
-        "href": "book/OEBPS/xhtml/appD.xhtml"
+        "id": "ref-appendices-checkpoint-D",
+        "title": "Appendix D: Bit Depth",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixD"
       },
       {
-        "id": "ref-appendices-checkpoint-05",
-        "title": "Appendix E Exposure and the Digital Linear Effect",
-        "href": "book/OEBPS/xhtml/appE.xhtml"
+        "id": "ref-appendices-checkpoint-E",
+        "title": "Appendix E: Exposure and the Digital Linear Effect",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixE"
       },
       {
-        "id": "ref-appendices-checkpoint-06",
-        "title": "Appendix F Digital Light Meters and the Zone System",
-        "href": "book/OEBPS/xhtml/appF.xhtml"
+        "id": "ref-appendices-checkpoint-F",
+        "title": "Appendix F: Digital Light Meters and the Zone System",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixF"
       },
       {
-        "id": "ref-appendices-checkpoint-07",
-        "title": "Appendix G A Primer on Basic Film Photography",
-        "href": "book/OEBPS/xhtml/appG.xhtml"
+        "id": "ref-appendices-checkpoint-G",
+        "title": "Appendix G: A Primer on Basic Film Photography",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixG"
       },
       {
-        "id": "ref-appendices-checkpoint-08",
-        "title": "Appendix H Films, Developers, and Processing",
-        "href": "book/OEBPS/xhtml/appH.xhtml"
+        "id": "ref-appendices-checkpoint-H",
+        "title": "Appendix H: Films, Developers, and Processing",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixH"
       },
       {
-        "id": "ref-appendices-checkpoint-09",
-        "title": "Appendix I The Practical Zone System Film and Developer Testing Method",
-        "href": "book/OEBPS/xhtml/appI.xhtml"
+        "id": "ref-appendices-checkpoint-I",
+        "title": "Appendix I: The Practical Zone System Film and Developer Testing Method",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixI"
       },
       {
-        "id": "ref-appendices-checkpoint-10",
-        "title": "Appendix J Film and Developer Commentary by Iris Davis",
-        "href": "book/OEBPS/xhtml/appJ.xhtml"
+        "id": "ref-appendices-checkpoint-J",
+        "title": "Appendix J: Film and Developer Commentary by Iris Davis",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixJ"
       },
       {
-        "id": "ref-appendices-checkpoint-11",
-        "title": "Appendix K Alternative Methods for Extreme Expansion and Contraction Development",
-        "href": "book/OEBPS/xhtml/appK.xhtml"
+        "id": "ref-appendices-checkpoint-K",
+        "title": "Appendix K: Alternative Methods for Extreme Expansion and Contraction Development",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixK"
       },
       {
-        "id": "ref-appendices-checkpoint-12",
-        "title": "Appendix L Contrast Control with Paper Grades",
-        "href": "book/OEBPS/xhtml/appL.xhtml"
+        "id": "ref-appendices-checkpoint-L",
+        "title": "Appendix L: Contrast Control with Paper Grades",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixL"
       },
       {
-        "id": "ref-appendices-checkpoint-13",
-        "title": "Appendix M Developer Dilution",
-        "href": "book/OEBPS/xhtml/appM.xhtml"
+        "id": "ref-appendices-checkpoint-M",
+        "title": "Appendix M: Developer Dilution",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixM"
       },
       {
-        "id": "ref-appendices-checkpoint-14",
-        "title": "Appendix N Compensating Developers",
-        "href": "book/OEBPS/xhtml/appN.xhtml"
+        "id": "ref-appendices-checkpoint-N",
+        "title": "Appendix N: Compensating Developers",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixN"
       },
       {
-        "id": "ref-appendices-checkpoint-15",
-        "title": "Appendix O Inspection Development",
-        "href": "book/OEBPS/xhtml/appO.xhtml"
+        "id": "ref-appendices-checkpoint-O",
+        "title": "Appendix O: Inspection Development",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixO"
       },
       {
-        "id": "ref-appendices-checkpoint-16",
-        "title": "Appendix P Condenser and Diffusion Enlargers",
-        "href": "book/OEBPS/xhtml/appP.xhtml"
+        "id": "ref-appendices-checkpoint-P",
+        "title": "Appendix P: Condenser and Diffusion Enlargers",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixP"
       },
       {
-        "id": "ref-appendices-checkpoint-17",
-        "title": "Appendix Q ASA/ISO Numbers",
-        "href": "book/OEBPS/xhtml/appQ.xhtml"
+        "id": "ref-appendices-checkpoint-Q",
+        "title": "Appendix Q: ASA/ISO Numbers",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixQ"
       },
       {
-        "id": "ref-appendices-checkpoint-18",
-        "title": "Appendix R Filter Factors, the Reciprocity Effect, and Bellows Extension Factors",
-        "href": "book/OEBPS/xhtml/appR.xhtml"
+        "id": "ref-appendices-checkpoint-R",
+        "title": "Appendix R: Filter Factors, the Reciprocity Effect, and Bellows Extension Factors",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixR"
       },
       {
-        "id": "ref-appendices-checkpoint-19",
-        "title": "Appendix S A Compensation Method for Inaccurate Meters",
-        "href": "book/OEBPS/xhtml/appS.xhtml"
+        "id": "ref-appendices-checkpoint-S",
+        "title": "Appendix S: A Compensation Method for Inaccurate Meters",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixS"
       },
       {
-        "id": "ref-appendices-checkpoint-20",
-        "title": "Appendix T Zone System Metering Form: In-Camera Meters",
-        "href": "book/OEBPS/xhtml/appT.xhtml"
+        "id": "ref-appendices-checkpoint-T",
+        "title": "Appendix T: Zone System Metering Form: In-Camera Meters",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixT"
       },
       {
-        "id": "ref-appendices-checkpoint-21",
-        "title": "Appendix U Exposure Record and Checklist for Zone System Testing",
-        "href": "book/OEBPS/xhtml/appU.xhtml"
+        "id": "ref-appendices-checkpoint-U",
+        "title": "Appendix U: Exposure Record and Checklist for Zone System Testing",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixU"
       },
       {
-        "id": "ref-appendices-checkpoint-22",
-        "title": "Appendix V Examples: Zone System Applications",
-        "href": "book/OEBPS/xhtml/appV.xhtml"
+        "id": "ref-appendices-checkpoint-V",
+        "title": "Appendix V: Examples: Zone System Applications",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixV"
       },
       {
-        "id": "ref-appendices-checkpoint-23",
-        "title": "Appendix W Suggested Reading",
-        "href": "book/OEBPS/xhtml/appW.xhtml"
+        "id": "ref-appendices-checkpoint-W",
+        "title": "Appendix W: Suggested Reading",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixW"
       },
       {
-        "id": "ref-appendices-checkpoint-24",
-        "title": "Appendix X A Brief Directory of Online Digital and Photography-Related Resources",
-        "href": "book/OEBPS/xhtml/appX.xhtml"
+        "id": "ref-appendices-checkpoint-X",
+        "title": "Appendix X: A Brief Directory of Online Digital and Photography-Related Resources",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixX"
       },
       {
-        "id": "ref-appendices-checkpoint-25",
-        "title": "Appendix Y A Brief Glossary of Zone System and Digital Terminology",
-        "href": "book/OEBPS/xhtml/appY.xhtml"
+        "id": "ref-appendices-checkpoint-Y",
+        "title": "Appendix Y: A Brief Glossary of Zone System and Digital Terminology",
+        "href": "book/OEBPS/xhtml/Appendices.xhtml#sec_appendixY"
       }
     ],
     "reflectionPrompts": {

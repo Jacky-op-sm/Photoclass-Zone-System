@@ -85,9 +85,7 @@ python3 scripts/serve.py --open
 
 ### 5. Open in Browser
 
-```
-http://localhost:8000
-```
+Use the URL printed in Terminal, normally `http://localhost:8000/`.
 
 > Always use the URL printed by the local server. Do not open `index.html`
 > directly as a file; browser security restrictions prevent the app from
@@ -153,7 +151,7 @@ or share the `book/` directory with others.
 ## Tech Stack
 
 - Plain HTML, CSS, JavaScript (no frameworks)
-- Python 3 (for EPUB extraction and unit generation only)
+- Python 3 (for EPUB tools and local serving)
 - `localStorage` for data persistence
 - Python 3 standard library for private local serving
 

@@ -383,8 +383,8 @@ textarea:focus-visible {
 }
 
 .unit-card.is-reference {
-  background: #fafafa;
-  box-shadow: none;
+  background: #ffffff;
+  box-shadow: var(--shadow-card);
 }
 
 .unit-card-header {
@@ -1063,6 +1063,74 @@ body.reader-page {
   padding: 2.5rem 1.8rem;
   border-right: 1px solid var(--border-light);
   background: #fafafa;
+  transition: width var(--transition-slow), padding var(--transition-slow), border-color var(--transition-slow), opacity var(--transition-slow);
+}
+
+/* ── Sidebar Toggle Button ──────────────────────────────────── */
+.sidebar-toggle-btn {
+  position: absolute;
+  top: 0.55rem;
+  right: 0.45rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.4rem;
+  color: var(--text-muted);
+  background: transparent;
+  cursor: pointer;
+  border: none;
+  z-index: 10;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.sidebar-toggle-btn:hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-primary);
+}
+
+/* ── Sidebar Reopen Button (visible when collapsed) ─────────── */
+.sidebar-reopen-btn {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 3.8rem;
+  width: 2rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-light);
+  border-left: none;
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: var(--text-secondary);
+  cursor: pointer;
+  z-index: 99;
+  transition: color var(--transition-fast), background var(--transition-fast);
+  padding: 0;
+}
+
+.sidebar-reopen-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.96);
+}
+
+/* ── Collapsed State ────────────────────────────────────────── */
+.reader-layout.is-sidebar-collapsed .reader-sidebar {
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border-right-color: transparent;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.reader-layout.is-sidebar-collapsed .sidebar-reopen-btn {
+  display: flex;
 }
 
 .sidebar-label {
@@ -1349,6 +1417,11 @@ body.reader-page {
 @media (max-width: 900px) {
   .reader-sidebar {
     display: none;
+  }
+
+  .sidebar-reopen-btn,
+  .sidebar-toggle-btn {
+    display: none !important;
   }
 
   .reader-main {

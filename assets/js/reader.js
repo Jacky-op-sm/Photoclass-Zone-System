@@ -43,6 +43,31 @@
 
   // ── Init ────────────────────────────────────────────────────
   async function init() {
+    // Sidebar toggle logic
+    var layout = document.querySelector('.reader-layout');
+    var toggleBtn = document.querySelector('.sidebar-toggle-btn');
+    var reopenBtn = document.querySelector('.sidebar-reopen-btn');
+
+    function toggleSidebar(collapsed) {
+      if (collapsed) {
+        layout.classList.add('is-sidebar-collapsed');
+      } else {
+        layout.classList.remove('is-sidebar-collapsed');
+      }
+    }
+
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', function () {
+        toggleSidebar(true);
+      });
+    }
+
+    if (reopenBtn) {
+      reopenBtn.addEventListener('click', function () {
+        toggleSidebar(false);
+      });
+    }
+
     var params = new URLSearchParams(window.location.search);
     var src = params.get('src');
     var title = params.get('title') || '';
@@ -78,9 +103,79 @@
 
     // Fetch and render the chapter content
     try {
-      var resp2 = await fetch(src);
-      if (!resp2.ok) throw new Error('HTTP ' + resp2.status);
-      var html = await resp2.text();
+      var isAppendices = currentUnit && currentUnit.id === 'ref-appendices';
+      var html;
+
+      if (isAppendices) {
+        // Dynamically load and combine all 25 appendix files
+        var appLetters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y'];
+        var appFetches = [];
+        for (var ai = 0; ai < appLetters.length; ai++) {
+          var appFile = 'book/OEBPS/xhtml/app' + appLetters[ai] + '.xhtml';
+          appFetches.push(
+            fetch(appFile).then(function (r) { return r.text(); }).catch(function () { return ''; })
+          );
+        }
+        var appHtmls = await Promise.all(appFetches);
+
+        // Build combined HTML
+        html = '<html><head><title>Appendices</title></head><body><h1>Appendices</h1>';
+        for (var ai = 0; ai < appHtmls.length; ai++) {
+          var appHtml = appHtmls[ai];
+          if (!appHtml) continue;
+          
+          // Preprocess: fix self-closing tags (same as in renderContent)
+          appHtml = appHtml.replace(/<a\s+id="page_[^"]*"\s*\/>/g, '<span role="presentation"></span>');
+          appHtml = appHtml.replace(/<p\s+class="([^"]*)"\s*\/>/g, '<p class="$1"></p>');
+          appHtml = appHtml.replace(/<td\s*\/>/g, '<td></td>');
+
+          // Parse and extract body
+          var appDoc = new DOMParser().parseFromString(appHtml, 'text/html');
+          var body = appDoc.body;
+          if (!body || !body.innerHTML.trim()) {
+            appDoc = new DOMParser().parseFromString(appHtml, 'application/xhtml+xml');
+            body = appDoc.body;
+          }
+          if (!body) continue;
+
+          // Remove h1 (will use the appendix letter as h2 heading)
+          var h1s = body.querySelectorAll('h1');
+          for (var hi = 0; hi < h1s.length; hi++) {
+            h1s[hi].parentNode.removeChild(h1s[hi]);
+          }
+
+          // Fix image paths: resolve relative to xhtml/ directory
+          var imgs = body.querySelectorAll('img');
+          for (var mi = 0; mi < imgs.length; mi++) {
+            var imgSrc = imgs[mi].getAttribute('src');
+            if (imgSrc) {
+              imgs[mi].setAttribute('src', resolveUrl(imgSrc, DIR_BASE));
+            }
+          }
+
+          // Strip cross-file links (keep fragment-only)
+          var links = body.querySelectorAll('a');
+          for (var li = 0; li < links.length; li++) {
+            var href = links[li].getAttribute('href');
+            if (!href) continue;
+            if (href.indexOf('#') !== 0) {
+              links[li].removeAttribute('href');
+            }
+          }
+
+          var inner = body.innerHTML;
+          if (inner.trim()) {
+            var anchorId = 'sec_appendix' + appLetters[ai];
+            html += '<div id="' + anchorId + '"><h2>Appendix ' + appLetters[ai] + '</h2>' + inner + '</div>';
+          }
+        }
+        html += '</body></html>';
+      } else {
+        var resp2 = await fetch(src);
+        if (!resp2.ok) throw new Error('HTTP ' + resp2.status);
+        html = await resp2.text();
+      }
+
       renderContent(html, title, units, currentUnit, src);
     } catch (e) {
       document.querySelector('.reader-main').innerHTML =
@@ -94,17 +189,24 @@
     var sidebar = document.querySelector('.reader-sidebar');
     if (!sidebar) return;
 
-    sidebar.innerHTML = '';
+    // Remove previous dynamic sidebar content, keep toggle button
+    var existing = sidebar.querySelector('.sidebar-inner');
+    if (existing) existing.remove();
+
+    var inner = document.createElement('div');
+    inner.className = 'sidebar-inner';
 
     // Navigation label
     var navLabel = document.createElement('div');
     navLabel.className = 'sidebar-label';
     navLabel.textContent = 'CONTENTS';
-    sidebar.appendChild(navLabel);
+    inner.appendChild(navLabel);
 
     // All units list with expandable checkpoints
     var unitList = document.createElement('div');
     unitList.className = 'sidebar-unit-list';
+
+    sidebar.appendChild(inner);
 
     fetch('data/units.json').then(function (r) { return r.json(); }).then(function (units) {
       for (var i = 0; i < units.length; i++) {
@@ -193,13 +295,24 @@
           unitList.appendChild(unitWrap);
         })(units[i]);
       }
-      sidebar.appendChild(unitList);
+      inner.appendChild(unitList);
     });
   }
 
   // ── Render content ──────────────────────────────────────────
   function renderContent(html, title, units, currentUnit, src) {
     var main = document.querySelector('.reader-main');
+
+    // ── Preprocess XHTML: fix self-closing tags before HTML parser ──
+    // The text/html parser does NOT recognize self-closing syntax for
+    // non-void elements like <a>. <a id="page_24"/> is treated as an
+    // *opening* <a> tag that swallows all subsequent content (text, images)
+    // until a closing </a> or end of parent, causing severe truncation.
+    // Replace with inert <span> elements before parsing.
+    html = html.replace(/<a\s+id="page_[^"]*"\s*\/>/g, '<span role="presentation"></span>');
+    // Fix other self-closing non-void elements
+    html = html.replace(/<p\s+class="([^"]*)"\s*\/>/g, '<p class="$1"></p>');
+    html = html.replace(/<td\s*\/>/g, '<td></td>');
 
     var parser = new DOMParser();
     var doc = parser.parseFromString(html, 'text/html');
