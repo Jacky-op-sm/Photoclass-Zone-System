@@ -1,0 +1,243 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+<head>
+<title>The Practical Zone System for Film and Digital Photography</title>
+<link href="../styles/stylesheet.css" rel="stylesheet" type="text/css"/>
+<link href="../styles/mathml.css" rel="stylesheet" type="text/css"/>
+<link href="../styles/feTable.css" rel="stylesheet" type="text/css"/>
+<meta content="urn:uuid:e0000000-0000-0000-0000-000004905400" name="Adept.expected.resource"/>
+</head>
+<body>
+<h1 class="br1"><a id="page_216"/><a href="content.xhtml#bck_appA"><span class="br1">Appendix <span class="bold">A</span><br/> Color Management, Profiles, and Color Spaces</span></a></h1>
+<p class="text_noindent"><a id="page_217"/>I didn’t really appreciate how efficient and inspiring digital photography could be until I produced the first print after color managing my system. Before that, I was never sure that my monitor was a reliable tool for editing and previewing my work. After color management, digital printing finally began to make sense and felt like a creative process.</p>
+<p class="text_indent">“Color management” is the general term used to describe the coordination of the key elements of digital image processing that allows for consistent color rendition from one step in the process to the other. Without proper color management, you can’t be sure that color is accurately displayed on your monitor or that the resulting prints you make will match what you see on the screen. An ideal process would allow you to make one fine print after another without wasting time and materials on trial-and-error adjustments.</p>
+<p class="text_indent">Although the technical details behind color management are complex (and beyond the intentions of this book), the process itself is fairly simple to implement if you understand some of the basic concepts involved and know how to apply them to the various tools you’ll be working with in digital photography. If you are looking for a comprehensive book on this subject, consult <a href="appW.xhtml">Appendix W</a> for some excellent references.</p>
+<div id="secappA_1">
+<h2><a href="content.xhtml#bck_appA_secappA_1"><span class="br1">Profiles</span></a></h2>
+<p class="text_noindent">Many of the best books on this subject refer to the now-classic illustration of why color management is important and why color profiles are the key to making digital photography consistent and efficient. We’ve all had the experience of walking into an electronic appliance store and seeing an array of color TV sets for sale. They are all playing the same demonstration <a id="page_218"/>program, and yet the colors from one screen to the next are sometimes wildly different. Let’s consider why this is true.</p>
+<p class="text_indent">In general, two things make each TV set unique. First, there are settings that control the brightness, contrast, and saturation of each set, and they are all different. But even if these settings were the same, the phosphors that produce the colors in the screens are all slightly different in the way they respond to the signal from the media source. If your goal is to create a way to ensure that all the displays look the same, you would need to follow these general steps. For each step, I’ll make reference to how this stage in the process corresponds to color management in digital photography.</p>
+<ul class="simple">
+<li>1. First, you would need to decide on what the “correct” rendition of the media source looked like.</li>
+</ul>
+<p class="text_indent">In the world of digital imaging, this agreement on what the ideal rendition of all colors should be was done by the International Color Consortium (ICC) with representatives from all the leading manufacturers of digital hardware and software. Together, they created something called the Profile Connection Space (PCS), which is simply an unambiguous mathematical description of what “red” and every other color humans can see should look like.</p>
+<ul class="simple">
+<li>2. The next thing you would have to do is accurately measure, or “characterize,” the color renditions of each TV set to see how it differed from the agreed-upon PCS standards.</li>
+</ul>
+<p class="text_indent">Characterizing is the first step in the process known as “calibration” in the digital world. In practical terms, this is generally done in two ways. One is manually using either the Apple Display Calibration Assistant or Adobe Photoshop’s Gamma software. I don’t recommend that you use either of these because they rely on the human eye to make subtle comparisons, and this is a process that should be done with electronic consistency and precision. Instead, I suggest that you invest in, or borrow, a relatively inexpensive monitor calibration device that will automate and vastly simplify this process. <a href="appW.xhtml">Appendix W</a> contains references to where you can obtain these devices.</p>
+<ul class="simple">
+<li>3. After you have measured the ways that each TV set differs from the universal standard, you would need to make a series of subtle adjustments to bring them all into compliance with the agreed-upon PCS standard. After this, they would all look the same.</li>
+</ul>
+<p class="text_indent">This step in the process is called “profiling” because the monitor calibration device creates a small piece of software that tells the color management system how to compensate for the unique characteristics of your monitor, called a Profile. An ICC profile can be illustrated in the following way:</p>
+<p class="text_indent">One way to define “color balance” would be to say that the three primary components of color vision—Red (R), Green (G), and Blue (B)—are all present in equal amounts in mixtures that, when blended together, would appear as “neutral” to your eye. These neutral colors are black, white, and middle gray. Computers translate visible colors into numbers and the values that correspond to the brightness of these colors are 0 for black, 255 for white, and 128 for a value halfway between these extremes.</p>
+<p class="text_indent">Neutral middle gray is measured as an equal amount of each of the primary colors and can be diagrammed as shown here:</p>
+<div class="fig" id="fig_69f">
+<img alt="Figure A.1 The digital color numbers of neutral gray." src="../Images/figa_1.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.1</span> The digital color numbers of neutral gray.</p>
+</div>
+<p class="text_indent"><a id="page_219"/>If it happens that your monitor is lacking the colors red and blue in equal amounts and also some green, this would look to your eye like a darker-than-average gray with a “greenish cast.”</p>
+<div class="fig" id="fig_70f">
+<img alt="Figure A.2 The digital color numbers of greenish cast." src="../Images/figa_2.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.2</span> The digital color numbers of greenish cast.</p>
+</div>
+<p class="text_indent">To compensate for this imbalance, you would first have to measure it with your calibration device and then create a profile telling you how to compensate for the unique state of this monitor so you could bring it back into neutral balance.</p>
+<div class="fig" id="fig_71f">
+<img alt="Figure A.3 Building a color management profile." src="../Images/figa_3.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.3</span> Building a color management profile.</p>
+</div>
+<p class="text_indent">In this case the profile for this monitor would say, “Add Red + 53, Green + 33, and Blue + 53.”</p>
+<p class="text_indent"><a id="page_220"/>After a unique and accurate profile was created and applied to each monitor in the store, they would all look the same.</p>
+<p class="text_indent">This illustration greatly simplifies a much more complex process, but it makes the point that the function of a profile is to describe the unique state of an element in your system and provide the specific adjustments needed to make the appropriate corrections.</p>
+<p class="text_indent">The profile doesn’t actually make the correction itself; that is done by something called the Color Management Module (CMM). With Adobe Photoshop, the CMM is called the Adobe Color Engine (ACE). In the case of this example, the CMM would be the person using the profile information to actually tweak each monitor.</p>
+<p class="text_indent">With this example in mind, you can see that <span class="bold">profiles need to be created and applied to every step and every element in the digital imaging process from capturing an image to printing it on a given brand of printer with a particular type of paper and ink set</span>.</p>
+<p class="text_indent">These invisible little pieces of software are working in the background, together with the CMM to keep all your image viewing, creating, and printing tools coordinated and consistent.</p>
+<p class="text_indent">This process also allows you to attach profiles to your image files so that if you transfer your photograph to another color-managed system, your images will look just the same as they do on your system. This is called “tagging” in the world of digital photography.</p>
+<p class="text_indent">It is worth repeating that every make of printer, every brand of paper, and every set of inks has a unique profile. In some cases, the profiles provided by the manufacturers of printers, papers, and inks will work perfectly with your system if you know how to apply them properly. In other cases, you will have to create custom profiles that compensate for the idiosyncrasies of your system.</p>
+<p class="text_indent">After spending days trying to create custom profiles for my system, I learned the wisdom of having it done for me by professionals who offer this as a very inexpensive service. (See <a href="appW.xhtml">Appendix W</a> for a list of references for this service.)</p>
+<p class="text_indent">I describe the steps in the process of applying profiles to your monitor and printer under the later section “Color Managing Your System.”</p>
+</div>
+<div id="secappA_2">
+<h2><a href="content.xhtml#bck_appA_secappA_2"><span class="br1">Color Spaces</span></a></h2>
+<p class="text_noindent">Before we can move on to the practical steps for applying color management to your system, we need to cover one other somewhat abstract concept.</p>
+<p class="text_indent">As I mentioned previously, computers interpret visual colors as numbers that they can manipulate to produce the effects we see on monitors and digital prints. To define and visualize the range of colors that different monitors and printers can render, color scientists have devised a system that models these different spectrums of colors as if they existed as three-dimensional rainbows called “color spaces.”</p>
+<p class="text_indent">Color spaces come in different sizes that depend on what they are designed to represent. For example, the Lab color space is extremely large because it represents all the colors possible for the human eye to see. The sRGB color space is relatively small because it represents only <a id="page_221"/>the colors that can be rendered in a typical web browser. There are even color spaces that represent the colors that can be printed on a given paper with a given set of inks.</p>
+<div class="fig" id="fig_72f">
+<img alt="Figure A.4 Adobe RGB 1998 color space." src="../Images/figa_4.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.4</span> Adobe RGB 1998 color space.</p>
+</div>
+<p class="text_indent">Understanding color spaces is useful because one key decision digital photographers have to make is the color space they will use as the “working space” for their computer systems. You can think of this as the arena or “gamut” within which all your digital image editing takes place. Any colors that fit inside a given color space are said to be within that space’s gamut; any colors that don’t fit are said to be “out of gamut.”</p>
+<p class="text_indent">Problems can arise when there is a mismatch between the color space you have chosen to work in and the color space of the image you are working on. On the one hand, if your working space is too small for the image you’re editing, colors that were present in the image will simply be compressed until they fit within the gamut of your working color space. You’ll notice this as a loss of subtlety and saturation in your image.</p>
+<p class="text_indent">On the other hand, if your working color space is much bigger than the images you’re working on, the image’s colors will be spread out when you try to edit the image, creating gaps called “color-banding” and “posterization.”</p>
+<p class="text_indent"><a id="page_222"/>For this reason, it makes sense to choose a color space large enough to encompass the colors of your work, but not so large that it creates its own problems.</p>
+<p class="text_indent">One nice feature of color spaces is that they can be modeled in three dimensions with software such as Color Think Pro from Chromix and even be combined to see how they compare with each other.</p>
+<p class="text_indent">In <a href="appA.xhtml#figA_5" id="bck_figA_5">Figure A.5</a>, the sRGB color space is shown embedded in the Adobe RGB 1998 color space and, as you can see, the Adobe color space (shown as a wireframe) is much larger because, in general, it is designed to account for the colors of images intended for inkjet printers.</p>
+<div class="fig" id="figA_5f">
+<img alt="Figure A.5 Adobe RGB 1998 and sRGB color spaces compared." src="../Images/figa_5.jpg"/>
+<p class="image_caption"><a href="#bck_figA_5" id="figA_5"><span class="gr bold">Figure A.5</span></a> Adobe RGB 1998 and sRGB color spaces compared.</p>
+</div>
+<p class="text_indent">Current, high-quality inkjet printers are designed to print colors that are even beyond the range of Adobe’s RGB 1998 color space. <a href="appA.xhtml#figa_6" id="bck_figa_6">Figure A.6</a> shows a comparison of Adobe’s color space and a custom profile I made for my Epson printer.</p>
+<p class="text_indent">Notice that although the Adobe color space is generally very large, there are intense yellow colors that are beyond its gamut. If you were to bring an image that had these colors into an Adobe RGB 1998 working space, they would be “clipped,” or converted to less saturated numbers.</p>
+<div class="fig" id="figa_6f">
+<img alt="Figure A.6 Adobe RGB 1998 color space (wireframe) and a custom profile for Epson Pro4900 Premium Luster paper and ink set." src="../Images/figa_6.jpg"/>
+<p class="image_caption"><a href="#bck_figa_6" id="figa_6"><span class="gr bold">Figure A.6</span></a> Adobe RGB 1998 color space (wireframe) and a custom profile for Epson Pro4900 Premium Luster paper and ink set.</p>
+</div>
+<p class="text_indent"><a id="page_223"/>Digital editing software can be set up to warn you when colors are unprintable or out of gamut.</p>
+<p class="text_indent">An alternative would be to use a larger color space like ProPhoto as your standard working color space and then use the Epson profile when you print. The later sections “Choosing Your Color Space” and “Choosing Your Printer Profile” explain how to do this.</p>
+<p class="text_indent">After you define a given color space as your working standard, that information is tagged onto every image you edit and save. If you send that file to someone whose computer is set to a different working color space, Photoshop can be set to alert you there is a color space mismatch and offer you choices for conversion. (See <a href="appA.xhtml#figa_7" id="bck_figa_7">Figure A.7</a>.)</p>
+<p class="text_indent">Color spaces are known by initials like “CIE LAB” or “LUV,” but for digital photographers, the following is what you need to know about the most widely used color spaces:
+</p>
+<ul class="bullet">
+<li><span class="bold">sRGB</span> is a relatively small color space designed to provide a convenient standard for consumer digital cameras and web designers. In general, sRGB is too small a color space for digital photography intended for fine inkjet prints.</li>
+<li><span class="bold">Adobe Wide Gamut RGB</span> is an alternative to the sRGB color space that can contain a wider range of colors but contains colors that are imaginary and cannot be reproduced.</li>
+<li><span class="bold">ColorMatch RGB</span> is a standardized monitor color space that is often used as a default when more specific color spaces aren’t available. It has a wider gamut than sRGB, but a smaller one than Adobe RGB 1998.</li>
+<li><span class="bold">ProPhoto RGB</span> is an extremely wide color space preferred by many digital photographers who work with high-quality images intended for reproduction on photo-quality inkjet printers or recording on photographic film.</li>
+<li><span class="bold">Adobe RGB 1998</span> is a wide gamut color space that is currently preferred by most digital photographers making fine inkjet prints.</li>
+</ul>
+<p class="text_noindent"/>
+</div>
+<div id="secappA_3">
+<p class="text_noindent"><a id="page_224"/></p>
+<h2><a href="content.xhtml#bck_appA_secappA_3"><span class="br1">Color Managing Your System</span></a></h2>
+<p class="text_noindent">Applying color management to your system only requires understanding three basic concepts.</p>
+<p class="text_indent">First, you need to choose the appropriate color space for the kind of images you plan to create. For the majority of digital photographers this is a very simple decision:
+</p>
+<ul class="bullet">
+<li>If you are primarily planning to display your images on the Web, choose sRGB as your working color space.</li>
+<li>If you plan to make fine inkjet prints from your digital files, choose either Adobe RGB 1998 or ProPhoto RGB.</li>
+</ul>
+<p class="text_noindent"/>
+<p class="text_indent">In practice, the difference tends to be that only experts use ProPhoto RGB because its extremely wide gamut requires some skills to manage. Adobe RGB 1998 is generally the safer choice for most photographers.</p>
+<p class="text_indent">Second, as stated earlier, in theory all elements of a complete digital imaging system need accurate color profiles, and they need to be applied consistently. This could mean calibrating and creating profiles for everything from your camera, scanner, monitor, printer, and every paper you work with. But in the real world, only a well-calibrated monitor and printer/paper profiles are essential.</p>
+<p class="text_indent">Finally, there are three different color managers, and each controls a different part of the overall process. It’s important that you understand how to coordinate these three pieces of software so you can avoid conflicts that cause the most common problems:
+</p>
+<ul class="bullet">
+<li>Apple’s color management software is called <span class="bold">ColorSync</span>, and in general, it works in the background to make sure that the various color profiles are properly applied.</li>
+<li>Adobe Photoshop uses software called the <span class="bold">Adobe Color Engine</span> (ACE) that manages the color profiles for your monitor, images, and printers.</li>
+<li>Your printers and scanners use software called <span class="bold">“drivers”</span> that handle color profiles for each of these devices.</li>
+</ul>
+<p class="text_noindent"/>
+<p class="text_indent">Step 5, titled “Resolving Color Management Conflicts” explains how to coordinate the functions of these different software tools.</p>
+<div id="secappA_3_1">
+<div id="secappA_3_1_1">
+<h4>[<span class="bold">Step 1</span>] Calibrate Your Monitor</h4>
+<p class="text_noindent">A precisely calibrated and profiled monitor is absolutely essential for any of the other steps in color management to work properly. There’s an understandable tendency to take this step for granted because the images on the screen may look “good,” but remember that the key to color <a id="page_225"/>management is creating a coordinated system where all the colors you work with match universal PCS standards. These standards are numerical, so your monitor readouts need to be measured precisely and the resulting profile needs to be stored as the standard for your system.</p>
+<p class="text_indent">My strong recommendation is that you use one of the many monitor calibration devices that are available for this task (see <a href="appW.xhtml">Appendix W</a>). The process takes about 10 minutes and requires you to make a few important decisions:
+</p>
+<ul class="bullet">
+<li><span class="bold">White Balance.</span> This determines the color of white that your eye uses as a point of reference for judging all other colors. I use 6500 k (Medium White) as my standard, but this is purely a personal choice.</li>
+<li><span class="bold">Gamma.</span> This sets the contrast ratio that your system uses as a standard. For Macintosh computers, the default is 1.8; and for PCs, it’s 2.2.</li>
+<li><span class="bold">Luminance.</span> Most calibration devices give you the option of setting the brightness of your monitor to a recommended standard. For LCD monitors, this is 140 lamberts.</li>
+</ul>
+<p class="text_noindent"/>
+<p class="text_indent">Liquid-crystal display (LCD) monitors should be calibrated every 200–300 hours with normal use, but it’s a good idea to calibrate them at least once a month just to be sure that the display is correct when you need it.</p>
+</div>
+<div id="secappA_3_1_2">
+<h4>[<span class="bold">Step 2</span>] Choosing Your Color Space</h4>
+<p class="text_noindent">The next important step is selecting a color space for your system that sets the parameters within which all your color management operates. This is done in the Color Settings dialog box in Adobe Photoshop.</p>
+<div class="fig" id="figa_7f">
+<img alt="Figure A.7 Adobe Photoshop Color Settings dialog box." src="../Images/figa_7.jpg"/>
+<p class="image_caption"><a href="#bck_figa_7" id="figa_7"><span class="gr bold">Figure A.7</span></a> Adobe Photoshop Color Settings dialog box.</p>
+</div>
+<p class="text_indent"><a id="page_226"/>The most important choice for this step is found in the “Working Spaces” box. As described previously, if you are planning to create images primarily for the Web, you should choose sRGB as your color space. If you plan to print your images on an inkjet printer, you should choose Adobe RGB 1998 or ProPhoto. All the other Adobe default settings work well for most purposes.</p>
+</div>
+<div id="secappA_3_1_3">
+<h4>[<span class="bold">Step 3</span>] Choosing Your Printer Profile</h4>
+<p class="text_noindent">There is probably more confusion about these final two steps than anything else in color management, yet the two issues involved are really very simple:
+</p>
+<ol>
+<li>Your computer needs to know what profile to use for the particular printer and paper/ink combination you are using.</li>
+<li>You have to resolve potential conflicts between Photoshop and your print driver because both have color management functions.</li>
+</ol>
+<p class="text_noindent"/>
+<p class="text_indent">Step 3 asks you to select the profile that will give you the most consistent color match for the specific printer and paper/ink combination with which you are working. To do this, you first have to make that profile available to your system and then enter it in the right place when you make a print.</p>
+<p class="text_indent">Remember that a profile compensates for the idiosyncrasies that make every monitor, printer, or paper unique. Different paper surfaces absorb ink colors in slightly different ways, so a print that looks perfect on one paper could look green or magenta on another. To create an accurate printer/paper/ink profile, you first have to make a test print that includes a complete spectrum of colors patches and then compare those renderings to known PCS standards. After this test print has been analyzed with a device called a spectrophotometer, the resulting profile adjusts the printer settings so that the colors match the colors on your calibrated monitor as accurately as possible.</p>
+<p class="text_indent">Every manufacturer of inkjet printers distributes a set of profiles designed to work with the inks and papers it recommends. These are usually installed when you install the print driver for your printer, and in most cases, they will work fairly well if you know how to apply them. If you find yourself consistently having to make typical adjustments when you print a given file, this is a sign that your profile is not precisely accurate. But, of course, if you decide to use a paper or ink set that is different from what the canned profile was designed for, your prints may no longer match your monitor. At this point, you will either have to create a new profile on your own for this new printer/paper/ink combination or have it done for you by a professional. As I mentioned, after days of attempting to do this job myself, I learned that the latter choice is far more practical. (See <a href="appW.xhtml">Appendix W</a> for references to reliable and cost-effective custom profilers.)</p>
+<p class="text_indent">A typical printer profile will have a name like “MOAB Colorado Gloss Epson 4900.” As you can see, this profile is specifically designed for an Epson Stylus Pro 4900 printer using Moab Colorado Gloss paper with Epson inks. If this is the combination you’re using, your calibrated monitor and the resulting print will match. Any other profile may give you different results.</p>
+<p class="text_indent"><a id="page_227"/>Some printer manufacturers install their profiles in folders that aren’t easily accessible, but any custom profiles you make should be stored in the following folder on current Macintosh computers: <span class="bold">Home folder &gt; Library &gt; ColorSync &gt; Profiles</span>.</p>
+<p class="text_indent">Assuming that it’s installed properly, the following steps will allow you to apply this profile:
+</p>
+<ul class="simple">
+<li>1. In Photoshop, when you are ready to print an image, select Print from the File menu. You will now see a large dialog box as in <a href="appA.xhtml#figa_8" id="bck_figa_8">Figure A.8</a>.<div class="fig" id="figa_8f"><img alt="Figure A.8 Adobe Photoshop Print dialog box." src="../Images/figa_8.jpg"/><p class="image_caption"><a href="#bck_figa_8" id="figa_8"><span class="gr bold">Figure A.8</span></a> Adobe Photoshop Print dialog box.</p></div></li>
+<li>2. Use the Printer drop-down menu to choose your inkjet printer.</li>
+<li>3. Under Color Management &gt; Color Handling, choose Photoshop Manages Colors from the drop-down menu. This is an important step. For proper color management you do not want both Photoshop and the printer to manage your colors. For this to work properly you should always let Photoshop manage the colors.</li>
+</ul>
+<p class="text_noindent"/>
+<div id="box_62b">
+<p class="text_noindent gr">[<span class="bold">note</span>] If by mistake this menu is set to “Printer Manages Colors,” you will notice that there is a warning icon and a reminder to enable the printer’s color management system when you get to that step.</p>
+</div>
+<ul class="simple">
+<li>4. Under Printer Profile, choose the correct specific profile for the printer and paper/ink combination you are planning to use.</li>
+</ul>
+</div>
+<div id="secappA_3_1_4">
+<h4><a id="page_228"/>[<span class="bold">Step 4</span>] Print Driver Settings</h4>
+<p class="text_noindent">At this point, it’s important that you tell your computer which print driver it should use and what paper size and print orientation you want.</p>
+<p class="text_indent">You do this by clicking the Print Settings button (5) just under the Printer Menu. When you do that, the Adobe Printer Driver box as shown in <a href="appA.xhtml#figa_9" id="bck_figa_9">Figure A.9</a> will appear.</p>
+<div class="fig" id="figa_9f">
+<img alt="Figure A.9 The Adobe Print Driver box." src="../Images/figa_9.jpg"/>
+<p class="image_caption"><a href="#bck_figa_9" id="figa_9"><span class="gr bold">Figure A.9</span></a> The Adobe Print Driver box.</p>
+</div>
+<p class="text_indent">Make sure that you select the correct print driver from the “Printer” drop-down menu and that your paper size and orientation are correct.</p>
+<p class="text_indent">Behind the drop-down menu labeled “Layout” are the all-important Printer Settings choices.</p>
+<div class="fig" id="fig_73f">
+<img alt="Figure A.10 Choosing the Printer Settings box." src="../Images/figa_10.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.10</span> Choosing the Printer Settings box.</p>
+</div>
+<p class="text_indent"><a id="page_229"/>Select Printer Settings from the drop-down menu to see the following window.</p>
+<p class="text_indent">If the Print Mode and Color Mode menus are grayed out, as illustrated in <a href="appA.xhtml#figa_11" id="bck_figa_11">Figure A.11</a>, your settings are correct and you will not have color management conflicts with the printer driver.</p>
+<div class="fig" id="figa_11f">
+<img alt="Figure A.11 Printer Settings." src="../Images/figa_11.jpg"/>
+<p class="image_caption"><a href="#bck_figa_11" id="figa_11"><span class="gr bold">Figure A.11</span></a> Printer Settings.</p>
+</div>
+</div>
+<div id="secappA_3_1_5">
+<h4>[<span class="bold">Step 5</span>] Resolving Color Management Conflicts</h4>
+<p class="text_noindent">The Print Driver box controls all the specific behaviors of the printer, including the way the printer applies color management if you allow it to.</p>
+<p class="text_indent">If, however, these choices are lit, change the Printer Settings menu to Color Matching and select the ColorSync radio button to disengage the printer color controls (<a href="appA.xhtml#figa_12" id="bck_figa_12">Figure A.12</a>).</p>
+<p class="text_indent">Make sure that the paper profile listed corresponds to the paper, surface, and ink of your choice. If not, go back to the original Print box (refer to <a href="appA.xhtml#figa_8">Figure A.8</a>) and select it under Printer Profiles.</p>
+<div class="fig" id="figa_12f">
+<img alt="Figure A.12 Color Matching box." src="../Images/figa_12.jpg"/>
+<p class="image_caption"><a href="#bck_figa_12" id="figa_12"><span class="gr bold">Figure A.12</span></a> Color Matching box.</p>
+</div>
+<div class="fig" id="fig_74f">
+<img alt="Figure A.13 Printer Settings." src="../Images/figa_13.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.13</span> Printer Settings.</p>
+</div>
+<p class="text_indent"><a id="page_230"/>The Page Setup menus need to correspond to your choices of paper type (roll or sheet) and handling (Manual Feed or Paper Cassette), and the Media Type must match the surface type of the paper you are using.</p>
+<p class="text_indent"><a id="page_231"/>Make sure that the settings are as follows:
+</p>
+<ul class="simple">
+<li><span class="bold">Printer.</span> The printer you plan to use.</li>
+<li><span class="bold">Presets.</span> It’s a very smart idea to save presets that contain all the specific settings you customarily work with. This will save you lots of time in the future.</li>
+<li><span class="bold">Media Type.</span> This option should be set to a choice that is as close as possible to the specific paper you are planning to print on.</li>
+<li><span class="bold">Output Resolution.</span> These settings should be set to either SuperPhoto 1440 or 2880. The latter uses more ink and will give you marginally better quality.</li>
+</ul>
+<p class="text_noindent"/>
+<p class="text_indent">Make sure that the High Speed setting is unchecked.</p>
+<div id="box_63b">
+<p class="text_noindent gr">[<span class="bold">note</span>] The Super MicroWeave setting is optional. When this is checked the printer will make eight passes rather than the standard four. The result is higher quality but a slower printing process.</p>
+</div>
+<p class="text_indent">At this point, it’s a good idea to get into the habit of scrolling down to Summary to doublecheck that the print driver is set the way you want it to be. Most especially, make sure that the Color Mode setting is still set to “Off (No Color Management).”</p>
+<div class="fig" id="fig_75f">
+<img alt="Figure A.14 Print Settings Summary window." src="../Images/figa_14.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.14</span> Print Settings Summary window.</p>
+</div>
+<p class="text_indent"><a id="page_232"/>It’s also a very smart idea to save presets that contain all of the specific settings you customarily work with. This will save you lots of time in the future.</p>
+<p class="text_indent">Under the Presets dropdown menu, choose: <span class="bold">“Save Current Settings as Preset.”</span></p>
+<p class="text_indent">Give this Preset a logical name and click OK.</p>
+<p class="text_indent">When you click the Save button, you will return to the original print box.</p>
+<div class="fig" id="fig_76f">
+<img alt="Figure A.15 The Final Print window." src="../Images/figa_15.jpg"/>
+<p class="image_caption"><span class="gr bold">Figure A.15</span> The Final Print window.</p>
+</div>
+<p class="text_indent">When you click the Print button, your printer should now produce a print that very closely matches the image on your monitor.</p>
+<p class="text_indent">That’s what effective color management is all about.</p>
+</div>
+</div>
+</div>
+<div id="secappA_4">
+<h2><a href="content.xhtml#bck_appA_secappA_4"><span class="br1">The RIP Alternative</span></a></h2>
+<p class="text_noindent">In a previous edition, I recommended the use of raster image processor (RIP) technology to replace the color management workflow described here. Although these processors are very expensive, at that time I felt they were worth the cost because they provided a higher degree of color rendering and layout options than were possible using Epson’s standard choices.</p>
+<p class="text_indent">But, since that time, Epson introduced, first the Epson UltraChrome K3 inks, and more recently the Epson Ultrachrome HDR (High Dynamic Range) ink technology—with a new 11-color ink set—which have dramatically improved both the color range and the stability of the prints produced.</p>
+<p class="text_indent">Given these remarkable advances, I no longer feel that the RIP alternatives are worth the expense.</p>
+</div>
+</body>
+</html>

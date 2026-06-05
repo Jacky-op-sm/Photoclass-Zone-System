@@ -1,0 +1,602 @@
+math, math[mode="inline"] {
+  display: inline;
+  font-family: CMSY10, CMEX10, Symbol, Times;
+  font-style: normal;
+}
+
+math[mode="display"] {
+  display: block;
+  text-align: center;
+  font-family: CMSY10, CMEX10, Symbol, Times;
+  font-style: normal;
+}
+
+
+/* Rules dealing with the various values of the "mathvariant" attribute: */
+
+mi[mathvariant="normal"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mi[mathvariant="bold"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mi[mathvariant="italic"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+mi[mathvariant="bold-italic"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mi[mathvariant="double-struck"] {
+  font-family: msbm;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mi[mathvariant="script"] {
+  font-family: eusb;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mi[mathvariant="bold-script"] {
+  font-family: eusb;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mi[mathvariant="fraktur"] {
+  font-family: eufm;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mi[mathvariant="bold-fraktur"] {
+  font-family: eufm;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mi[mathvariant="sans-serif"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mi[mathvariant="bold-sans-serif"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mi[mathvariant="sans-serif-italic"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+mi[mathvariant="sans-serif-bold-italic"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mi[mathvariant="monospace"] {
+  font-family: monospace
+}
+
+mn[mathvariant="normal"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mn[mathvariant="bold"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mn[mathvariant="italic"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+mn[mathvariant="bold-italic"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mn[mathvariant="double-struck"] {
+  font-family: msbm;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mn[mathvariant="script"] {
+  font-family: eusb;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mn[mathvariant="bold-script"] {
+  font-family: eusb;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mn[mathvariant="fraktur"] {
+  font-family: eufm;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mn[mathvariant="bold-fraktur"] {
+  font-family: eufm;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mn[mathvariant="sans-serif"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mn[mathvariant="bold-sans-serif"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mn[mathvariant="sans-serif-italic"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+mn[mathvariant="sans-serif-bold-italic"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mn[mathvariant="monospace"] {
+  font-family: monospace
+}
+
+
+/* Rules dealing with "mathsize" attribute */
+
+mn[mathsize="small"] {
+  font-size: 80%
+}
+
+mn[mathsize="normal"] {
+/*  font-size: 100%  - which is unnecessary */
+}
+
+mn[mathsize="big"] {
+  font-size:  125%
+}
+
+mo[mathvariant="normal"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mo[mathvariant="bold"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mo[mathvariant="italic"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+mo[mathvariant="bold-italic"] {
+  font-family: "Times New Roman", Courier, Garamond, serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mo[mathvariant="double-struck"] {
+  font-family: msbm;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mo[mathvariant="script"] {
+  font-family: eusb;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mo[mathvariant="bold-script"] {
+  font-family: eusb;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mo[mathvariant="fraktur"] {
+  font-family: eufm;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mo[mathvariant="bold-fraktur"] {
+  font-family: eufm;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mo[mathvariant="sans-serif"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: normal;
+  font-style: normal;
+}
+
+mo[mathvariant="bold-sans-serif"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: bold;
+  font-style: normal;
+}
+
+mo[mathvariant="sans-serif-italic"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: normal;
+  font-style: italic;
+}
+
+mo[mathvariant="sans-serif-bold-italic"] {
+  font-family: Arial, "Lucida Sans Unicode", Verdana, sans-serif;
+  font-weight: bold;
+  font-style: italic;
+}
+
+mo[mathvariant="monospace"] {
+  font-family: monospace
+}
+
+
+/* Rules dealing with "mathsize" attribute */
+
+mo[mathsize="small"] {
+  font-size: 80%
+}
+
+mo[mathsize="normal"] {
+/*  font-size: 100%  - which is unnecessary */
+}
+
+mo[mathsize="big"] {
+  font-size:  125%
+}
+
+
+/* Rules dealing with "mathsize" attribute */
+
+mi[mathsize="small"] {
+  font-size: 80%
+}
+
+mi[mathsize="normal"] {
+/*  font-size: 100%  - which is unnecessary */
+}
+
+mi[mathsize="big"] {
+  font-size:  125%
+}
+
+
+/*Set size values for the "base" children of script and limit schema to 
+  distinguish them from the script or limit children:
+*/
+
+msub>*:first-child[mathsize="big"],
+msup>*:first-child[mathsize="big"],
+msubsup>*:first-child[mathsize="big"],
+munder>*:first-child[mathsize="big"],
+mover>*:first-child[mathsize="big"],
+munderover>*:first-child[mathsize="big"],
+mmultiscripts>*:first-child[mathsize="big"],
+mroot>*:first-child[mathsize="big"] {
+  font-size: 125%
+}
+
+msub>*:first-child[mathsize="small"],
+msup>*:first-child[mathsize="small"],
+msubsup>*:first-child[mathsize="small"],
+munder>*:first-child[mathsize="small"],
+mover>*:first-child[mathsize="small"],
+munderover>*:first-child[mathsize="small"],
+mmultiscripts>*:first-child[mathsize="small"],
+mroot>*:first-child[mathsize="small"] {
+  font-size: 80%
+}
+
+msub>*:first-child,
+msup>*:first-child,
+msubsup>*:first-child,
+munder>*:first-child,
+mover>*:first-child,
+munderover>*:first-child,
+mmultiscripts>*:first-child,
+mroot>*:first-child {
+  font-size: 100%
+}
+
+/*Set size values for the other children of script and limit schema (the 
+  script and limit children) - include scriptlevel increment attribute?
+*/
+
+msub>*[mathsize="big"],
+msup>*[mathsize="big"],
+msubsup>*[mathsize="big"],
+munder>*[mathsize="big"],
+mover>*[mathsize="big"],
+munderover>*[mathsize="big"],
+mmultiscripts>*[mathsize="big"],
+math[display="inline"] mfrac>*[mathsize="big"],
+mi[scriptlevel="+1"][mathsize="big"] {
+  font-size: 89%  /* (.71 times 1.25) */
+}
+
+msub>* [mathsize="small"],
+msup>*[mathsize="small"],
+msubsup>*[mathsize="small"],
+munder>*[mathsize="small"],
+mover>*[mathsize="small"],
+munderover>*[mathsize="small"],
+mmultiscripts>*[mathsize="small"],
+math[display="inline"] mfrac>*[mathsize="small"],
+mi[scriptlevel="+1"][mathsize="small"] {
+  font-size: 57% /* (.71 times .80) */
+}
+
+msub>*,
+msup>*,
+msubsup>*,
+munder>*,
+mover>*,
+munderover>*,
+mmultiscripts>*,
+math[display="inline"] mfrac>*,
+mi[scriptlevel="+1"] {
+  font-size: 71%
+}
+
+mroot>*[mathsize="big"] {
+  font-size: 62%  /* (.50 times 1.25) */
+}
+
+mroot>*[mathsize="small"] {
+  font-size: 40% /* (.50 times .80) */
+}
+
+mroot>* {
+  font-size: 50%
+}
+
+/* Set size values for other scriptlevel increment attributes  */
+
+mi[scriptlevel="+2"][mathsize="big"] {
+  font-size: 63%  /* (.71 times .71 times 1.25) */
+}
+
+mi[scriptlevel="+2"][mathsize="small"] {
+  font-size: 36% /* (.71 times .71 times .71) */
+}
+
+mi[scriptlevel="+2"] {
+  font-size: 50%   /* .71 times .71 */
+}
+
+mi[mathcolor="green"] {
+  color: green
+}
+
+mi[mathcolor="black"] {
+  color: black
+}
+
+mi[mathcolor="red"] {
+  color: red
+}
+
+mi[mathcolor="blue"] {
+  color: blue
+}
+
+mi[mathcolor="olive"] {
+   color: olive
+}
+
+mi[mathcolor="purple"] {
+   color: purple
+}
+
+mi[mathcolor="teal"] {
+   color: teal
+}
+
+mi[mathcolor="aqua"] {
+   color: aqua
+}
+
+mi[mathcolor="gray"] {
+   color: gray
+}
+
+mi[mathbackground="blue"] {
+   background-color: blue
+}
+
+mi[mathbackground="green"] {
+   background-color: green
+}
+
+mi[mathbackground="white"] {
+   background-color: white
+}
+
+mi[mathbackground="yellow"] {
+   background-color: yellow
+}
+
+mi[mathbackground="aqua"] {
+   background-color: aqua
+}
+
+mo[scriptlevel="+2"][mathsize="big"] {
+  font-size: 63%  /* (.71 times .71 times 1.25) */
+}
+
+mo[scriptlevel="+2"][mathsize="small"] {
+  font-size: 36% /* (.71 times .71 times .71) */
+}
+
+mo[scriptlevel="+2"] {
+  font-size: 50%   /* .71 times .71 */
+}
+
+mo[mathcolor="green"] {
+  color: green
+}
+
+mo[mathcolor="black"] {
+  color: black
+}
+
+mo[mathcolor="red"] {
+  color: red
+}
+
+mo[mathcolor="blue"] {
+  color: blue
+}
+
+mo[mathcolor="olive"] {
+   color: olive
+}
+
+mo[mathcolor="purple"] {
+   color: purple
+}
+
+mo[mathcolor="teal"] {
+   color: teal
+}
+
+mo[mathcolor="aqua"] {
+   color: aqua
+}
+
+mo[mathcolor="gray"] {
+   color: gray
+}
+
+mo[mathbackground="blue"] {
+   background-color: blue
+}
+
+mo[mathbackground="green"] {
+   background-color: green
+}
+
+mo[mathbackground="white"] {
+   background-color: white
+}
+
+mo[mathbackground="yellow"] {
+   background-color: yellow
+}
+
+mo[mathbackground="aqua"] {
+   background-color: aqua
+}
+
+mn[scriptlevel="+2"][mathsize="big"] {
+  font-size: 63%  /* (.71 times .71 times 1.25) */
+}
+
+mn[scriptlevel="+2"][mathsize="small"] {
+  font-size: 36% /* (.71 times .71 times .71) */
+}
+
+mn[scriptlevel="+2"] {
+  font-size: 50%   /* .71 times .71 */
+}
+
+mn[mathcolor="green"] {
+  color: green
+}
+
+mn[mathcolor="black"] {
+  color: black
+}
+
+mn[mathcolor="red"] {
+  color: red
+}
+
+mn[mathcolor="blue"] {
+  color: blue
+}
+
+mn[mathcolor="olive"] {
+   color: olive
+}
+
+mn[mathcolor="purple"] {
+   color: purple
+}
+
+mn[mathcolor="teal"] {
+   color: teal
+}
+
+mn[mathcolor="aqua"] {
+   color: aqua
+}
+
+mn[mathcolor="gray"] {
+   color: gray
+}
+
+mn[mathbackground="blue"] {
+   background-color: blue
+}
+
+mn[mathbackground="green"] {
+   background-color: green
+}
+
+mn[mathbackground="white"] {
+   background-color: white
+}
+
+mn[mathbackground="yellow"] {
+   background-color: yellow
+}
+
+mn[mathbackground="aqua"] {
+   background-color: aqua
+}

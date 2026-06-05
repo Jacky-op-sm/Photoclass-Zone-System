@@ -1,0 +1,195 @@
+/* T&F Stylesheet ver 1.6 (dated April 18, 2014) */
+/*Test Version with LinLibertine Fonts*/
+
+/* Cover Page */
+
+@font-face{font-family: "LinLibertine"; src: url(../Fonts/LinLibertine-B.otf); font-style: normal; font-weight: bold;}
+@font-face{font-family: "LinLibertine"; src: url(../Fonts/LinLibertine-I.otf); font-style: italic; font-weight: normal;}
+@font-face{font-family: "LinLibertine"; src: url(../Fonts/LinLibertine-BI.otf); font-style: italic; font-weight: bold;}
+@font-face{font-family: "LinLibertine"; src: url(../Fonts/LinLibertine-R.otf); font-style: normal; font-weight: normal;}
+
+div.cover_image{text-align: center;}
+
+
+/* Body */
+
+body{line-height: 130%; margin-left: 1.5em; margin-right: 2.25em; font-family: "LinLibertine";}
+
+
+/* Title Page */
+
+.title{font-size: 200%; font-style: normal; font-weight: normal; margin-top: 1em; margin-bottom: 1em; text-align: left; margin-right: 0em; line-height:120%;}
+.subtitle{font-size: 150%; font-style: normal; font-weight: normal; margin-top: 0em; margin-bottom: 3em; text-align: left; margin-right: 0em; line-height:120%;}
+.author{font-size: 100%; font-style: normal; font-weight: bold; margin-top: 0em; margin-bottom: 5em; text-align: left; margin-right: 0em;}
+.title_image{text-align:left; margin-top:10em;}
+
+
+/* Copyright Page */
+
+.copyright_page{margin-top:3em;}
+.copyright{font-size:95%; margin-top:0em; margin-bottom:0em; font-weight: normal; text-align: left;}
+.copyright1{font-size:95%; margin-top:1em; margin-bottom:0em; font-weight: normal; text-align: left;}
+.copyright_indent1{font-size:95%; margin-top:0em; margin-left:1em; margin-bottom:0em; font-weight: normal; text-align: left; text-indent: 0em;}
+.copyright_indent2{font-size:95%; margin-top:0em; margin-left:2em; margin-bottom:0em; font-weight: normal; text-align: left; text-indent: 0em;}
+.copyright_indent3{font-size:95%; margin-top:0em; margin-left:3em; margin-bottom:0em; font-weight: normal; text-align: left; text-indent: 0em;}
+
+
+/* Dedication Page */
+
+.dedication{font-size:100%; margin-top:5em; margin-bottom:0em; font-weight: normal; text-align: left;}
+
+
+/* Contents Page */
+
+.content{text-indent:-1em; margin-left:1em; margin-top:1em; margin-bottom:1em; text-align: left;}
+.content_author{text-indent:0em; margin-left:1em; margin-top:-1em; margin-bottom:0.5em; text-align: left;}
+.content_indent1{text-indent:-1.5em; margin-left:2.5em; margin-top:0.5em; margin-bottom:0.5em; text-align: left;}
+.content_author1{text-indent:0em; margin-left:2.5em; margin-top:-0.5em; margin-bottom:0.5em; text-align: left;}
+.content_indent2{text-indent:-2.5em; margin-left:4.5em; margin-top:0.5em; margin-bottom:0.5em; text-align: left;}
+.content_author2{text-indent:05em; margin-left:-0.5em; margin-top:-0.5em; margin-bottom:0.5em; text-align: left;}
+.content_indent3{text-indent:-3.5em; margin-left:6.5em; margin-top:0.5em; margin-bottom:0.5em; text-align: left;}
+.content_author3{text-indent:0em; margin-left:6.5em; margin-top:-0.5em; margin-bottom:0.5em; text-align: left;}
+.content_indent4{text-indent:-4.5em; margin-left:8.5em; margin-top:0.5em; margin-bottom:0.5em; text-align: left;}
+.content_author4{text-indent:0em; margin-left:8.5em; margin-top:-0.5em; margin-bottom:0.5em; text-align: left;}
+.content_indent5{text-indent:-5.5em; margin-left:10.5em; margin-top:0.5em; margin-bottom:0.5em; text-align: left;}
+.content_author5{text-indent:0em; margin-left:10.5em; margin-top:-0.5em; margin-bottom:0.5em; text-align: left;}
+.content_front_back{text-indent:-1em; margin-left:1em; margin-top:0em; margin-bottom:0em; text-align: left;}
+
+/* Chapter Headings */
+
+h1{font-size: 180%; font-style: normal; font-weight: normal; margin-top: 1em; margin-bottom: 3em; margin-right: 0em; margin-left: 0em; text-align: left; line-height:130%;}
+.h1_title{font-size: 180%; font-style: normal; font-weight: normal; margin-top: 1em; margin-bottom: 0.5em; margin-right: 0em; margin-left: 0em; text-align: left; line-height:130%;}
+.h1_subtitle{font-size: 160%; font-style: normal; font-weight: normal; margin-top: 0em; margin-bottom: 3em; margin-right: 0em; margin-left: 0em; text-align: left; line-height:130%;}
+h2{font-size: 150%; font-style: normal; font-weight: normal; margin-top: 2em; margin-bottom: 1em; margin-right: 0em; margin-left: 0em; text-align: left; line-height:130%; color: #683541;}
+h3{font-size: 120%; font-style: normal; font-weight: normal; margin-top: 2em; margin-bottom: 1em; margin-right: 0em; margin-left: 0em; text-align: left; line-height:130%; color: #696a6c;}
+h4{font-size: 120%; font-style: normal; font-weight: normal; margin-top: 2em; margin-bottom: 1em; margin-right: 0em; margin-left: 0em; text-align: left; line-height:130%; color: #683541;}
+h5{font-size: 120%; font-style: normal; font-weight: normal; margin-top: 2em; margin-bottom: 1em; text-align: left; margin-right: 0em; line-height:130%;}
+h6{font-size: 120%; font-style: italic; font-weight: bold; margin-top: 2em; margin-bottom: 1em; text-align: left; margin-right: 0em; line-height:130%; color: #696a6c;}
+.ch_author{font-size: 140%; font-style: normal; font-weight: normal; margin-top: -2em; margin-left: 0em; margin-bottom: 3em; text-align: left; margin-right: 0em; line-height:130%;}
+
+
+/* Chapter Front */
+
+p.affiliation {text-align: justify; font-size: 100%; margin-left: 0em; margin-right: 0em; margin-top: 0em; margin-bottom: 1em;}
+p.abstract {text-align: justify; font-style: normal; font-size: 100%; margin-bottom: 2em; margin-left: 2em; margin-right: 2em; margin-top: 2em;}
+p.keywords {text-align: justify; font-style: normal; font-size: 100%; margin-bottom: 1.5em; margin-left: 2em; margin-right: 2em; margin-top: 1.5em;}
+
+
+/* Chapter Text */
+
+.text_noindent{font-size: 100%; text-align: justify; margin-top: 1em; margin-bottom: 0em;}
+.text_noindent_mrgtop0{font-size: 100%; text-align: justify; margin-top: 0em; margin-bottom: 0em;}
+.text_indent{font-size: 100%; text-align: justify; margin-top: 0.5em; margin-bottom: 0em; text-indent: 1em;}
+
+.text_left{text-align: left;}
+.text_center{text-align: center;}
+.text_right{text-align: right;}
+.text_justify{text-align: justify;}
+
+.text_reverse{text-align: justify; text-indent: -1.5em; margin-left: 1.5em; margin-top: 0em; margin-bottom: 0em;}
+.text_reverse1{text-align: justify; text-indent: -3.7em; margin-left: 3.7em; margin-top: 0em; margin-bottom: 0em;}
+
+.mrg-top {margin-top:1em;}
+.mrg-bot {margin-bottom:1em;}
+.mrg-left {margin-left:1em;}
+.mrg-right {margin-right:1em;}
+
+.italic{font-style: italic;}
+.bold{font-weight: bold;}
+.bolditalic{font-style: italic; font-weight: bold;}
+.underline{text-decoration: underline;}
+.strike{text-decoration: line-through;}
+.small-caps{font-size: 80%;}
+sub{font-size: 70%; line-height: 0%; vertical-align: text-bottom;}
+sup{font-size: 70%; line-height: 0%; vertical-align: super;}
+
+.pagebreak {page-break-before:always;}
+
+/* Quotes */
+
+.quotes{margin-left: 1.5em; margin-right: 0em; margin-top: 1em; margin-bottom: 1em; font-size:90%; line-height:130%;}
+.footnote_quotes{font-size: 90%; margin-left: 1.5em; margin-right: 0em; margin-top: 1em; margin-bottom: 1em; font-size:90%;}
+.attrib{margin-left: 0em; margin-right: 0em; margin-top: 0.5em; margin-bottom: 1em; font-size:90%; text-align:right;}
+
+
+/* Footnote */
+
+.footnote{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0.5em; margin-left: 1.5em; text-indent:-0.9em;}
+.footnote_1digit{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0.5em; margin-left: 1.5em; text-indent:-1.3em;}
+.footnote_2digit{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0.5em; margin-left: 1.5em; text-indent:-1.8em;}
+
+
+/* References */
+
+.references{font-size: 100%; text-align: justify; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 1.5em;}
+.references_left{font-size: 100%; text-align: left; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 1.5em;}
+
+
+/* List */
+
+ul.simple{list-style-type: none; text-indent:-1em; margin-left:1em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+ul.bullet{list-style-type: disc; text-indent:0em; margin-left:1em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+ol{margin-left:1.5em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+ol.alpha-lower{list-style-type: lower-alpha; text-indent:0em; margin-left:1.5em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+ol.alpha-upper{list-style-type: upper-alpha; text-indent:0em; margin-left:1.5em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+ol.roman-lower{list-style-type: lower-roman; text-indent:0em; margin-left:1.5em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+ol.roman-upper{list-style-type: upper-roman; text-indent:0em; margin-left:1.5em; margin-top:1em; margin-bottom:1em; text-align: justify;}
+
+
+/* Table */
+
+div.table{font-size: 100%; margin-top: 1em; margin-bottom: 1em;}
+table{width:100%; margin-left:0em; margin-right:0em;}
+.table_caption{font-size: 90%; text-align: left;}
+.table_foot{font-size: 90%; text-align: left; margin-top:-1em;}
+.table_frame {border-top: solid 1px #683541; border-bottom: solid 1px #683541; border-width: 0.1em;}
+thead td{background-color: #683541; color: #ffffff;font-weight: bold;}
+tbody td{border-top: solid 1px #683541; border-bottom: solid 1px #683541;}
+.border_left_right {border-right: solid; border-left: solid; border-width: 0.1em;}
+.border_top_bot {border-top: solid; border-bottom: solid; border-right: solid; border-left: solid; border-width: 0.1em;}
+.border_bot {border-bottom: solid; border-width: 0.1em;}
+.border_top {border-top: solid; border-width: 0.1em;}
+.border_right {border-right: solid; border-width: 0.1em;}
+.border_left {border-left: solid; border-width: 0.1em;}
+
+
+/* Figure */
+
+div.fig{font-size: 100%; text-align: center; margin-top: 1em; margin-bottom: 1em;}
+img{max-width: 90%; height: auto;}
+img.cover{max-height: 100%; width: auto;}
+.image_caption{font-size: 90%; text-align: left;}
+.fig_foot{font-size: 90%; text-align: left; margin-top: -1em;}
+
+
+/* Contributors */
+
+.contrib{font-size: 100%; text-align: justify; margin-top: 1em; margin-bottom: 1em;}
+.contrib_indent{font-size: 100%; text-align: justify; margin-top: 1em; margin-bottom: 1em; text-indent: -1.5em; margin-left: 1.5em;}
+
+
+/* Glossary */
+
+.glossay{font-size: 100%; font-style: normal; font-weight: normal; margin-top: 0em; margin-bottom: 0.2em; margin-right: 0em; margin-left: 1em; text-align: justify; text-indent:-1em;}
+
+
+/* Index */
+
+.index-head{font-size: 100%; text-align: left; margin-top: 1em; margin-bottom: 0.5em; font-weight: bold;}
+.index_level0{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 1.5em;}
+.index_level1{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 2.5em;}
+.index_level2{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 3.5em;}
+.index_level3{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 4.5em;}
+.index_level4{font-size: 90%; text-align: justify; margin-top: 0em; margin-bottom: 0em; text-indent: -1.5em; margin-left: 5.5em;}
+
+
+/* Box */
+
+.box1{font-size:100%; margin-top: 1em; margin-bottom: 1em; margin-right: 0em; margin-left: 0em; padding-top: 1em; padding-bottom: 1em; padding-right: 1em; padding-left: 1em; text-align: justify; border:solid;}
+.box2{font-size:100%; margin-top: 1em; margin-bottom: 1em; margin-right: 0em; margin-left: 0em; padding-top: 1em; padding-bottom: 1em; padding-right: 1em; padding-left: 1em; text-align: justify; border:double;}
+.box_title{font-size: 130%; font-style: normal; font-weight: bold; margin-bottom: 1em; margin-top: 0em; margin-right: 0em; margin-left: 0em; text-align: left;}
+.toc1{visibility:hidden;display:none;left:50%;z-index:99;height:auto;margin-left:-40%;width:80%;-webkit-box-shadow:0 0 10px rgba(0,0,0,.4);box-shadow:0 0 10px rgba(0,0,0,.4);top:50px}
+
+.br1{color: #683541;}
+.gr{color: #696a6c;}
+.dq{font-size:100%; margin-top: 1em; margin-bottom: 1em; margin-right: 0em; margin-left: 0em; padding-top: 1em; padding-bottom: 1em; padding-right: 1em; padding-left: 1em; text-align: justify; border-top:solid 1px #683541; border-bottom:solid 1px #683541; color:#696a6c;}

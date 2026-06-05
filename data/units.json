@@ -1,0 +1,786 @@
+[
+  {
+    "id": "unit-01",
+    "number": 1,
+    "title": "Why and How to Read this Book",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/sec_1.xhtml",
+    "estimatedDays": 1,
+    "priority": "high",
+    "checkpoints": [
+      {
+        "id": "unit-01-checkpoint-01",
+        "title": "Why and How to Read this Book",
+        "href": "book/OEBPS/xhtml/sec_1.xhtml"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-02",
+    "number": 2,
+    "title": "Will It Come Out?",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch01.xhtml",
+    "estimatedDays": 3,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-02-checkpoint-01",
+        "title": "Introduction",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_1"
+      },
+      {
+        "id": "unit-02-checkpoint-02",
+        "title": "What Exactly Is the Zone System?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_2"
+      },
+      {
+        "id": "unit-02-checkpoint-03",
+        "title": "Why Is Photographic Technique So Important?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_3"
+      },
+      {
+        "id": "unit-02-checkpoint-04",
+        "title": "Is the Zone System Outdated?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_4"
+      },
+      {
+        "id": "unit-02-checkpoint-05",
+        "title": "If the Zone System Is So Important, How Were Good Photographs Taken without It?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_5"
+      },
+      {
+        "id": "unit-02-checkpoint-06",
+        "title": "Do I need a Spot Meter to Use the Zone System?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_6"
+      },
+      {
+        "id": "unit-02-checkpoint-07",
+        "title": "Isn’t the Zone System Useful Only with View Cameras?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_7"
+      },
+      {
+        "id": "unit-02-checkpoint-08",
+        "title": "How Does the Zone System Apply to Digital Photography?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_8"
+      },
+      {
+        "id": "unit-02-checkpoint-09",
+        "title": "Can the Zone System Be Used with Smartphone Cameras?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_9"
+      },
+      {
+        "id": "unit-02-checkpoint-10",
+        "title": "Can I Use a Smartphone Light Meter Application with the Zone System?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_10"
+      },
+      {
+        "id": "unit-02-checkpoint-11",
+        "title": "How Does the Zone System Apply to the Use of an Electronic Flash?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_11"
+      },
+      {
+        "id": "unit-02-checkpoint-12",
+        "title": "Can the Zone System be Used with Color Film?",
+        "href": "book/OEBPS/xhtml/Ch01.xhtml#sec1_12"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-03",
+    "number": 3,
+    "title": "Print Quality, Negative Contrast, and Dynamic Range",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch02.xhtml",
+    "estimatedDays": 4,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-03-checkpoint-01",
+        "title": "Subject Contrast and Photographic Papers: A Bit of History",
+        "href": "book/OEBPS/xhtml/Ch02.xhtml#sec2_1"
+      },
+      {
+        "id": "unit-03-checkpoint-02",
+        "title": "The Photographic Procrustean Beds",
+        "href": "book/OEBPS/xhtml/Ch02.xhtml#sec2_2"
+      },
+      {
+        "id": "unit-03-checkpoint-03",
+        "title": "Working with Paper Grades",
+        "href": "book/OEBPS/xhtml/Ch02.xhtml#sec2_3"
+      },
+      {
+        "id": "unit-03-checkpoint-04",
+        "title": "Working with Problem Negatives",
+        "href": "book/OEBPS/xhtml/Ch02.xhtml#sec2_4"
+      },
+      {
+        "id": "unit-03-checkpoint-05",
+        "title": "Summary",
+        "href": "book/OEBPS/xhtml/Ch02.xhtml#sec2_5"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-04",
+    "number": 4,
+    "title": "The Control of Negative Contrast",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch03.xhtml",
+    "estimatedDays": 3,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-04-checkpoint-01",
+        "title": "Expose for the Shadows",
+        "href": "book/OEBPS/xhtml/Ch03.xhtml#sec3_1"
+      },
+      {
+        "id": "unit-04-checkpoint-02",
+        "title": "Develop for the Highlights",
+        "href": "book/OEBPS/xhtml/Ch03.xhtml#sec3_2"
+      },
+      {
+        "id": "unit-04-checkpoint-03",
+        "title": "Normal Development",
+        "href": "book/OEBPS/xhtml/Ch03.xhtml#sec3_3"
+      },
+      {
+        "id": "unit-04-checkpoint-04",
+        "title": "Summary",
+        "href": "book/OEBPS/xhtml/Ch03.xhtml#sec3_4"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-05",
+    "number": 5,
+    "title": "The Zone",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch04.xhtml",
+    "estimatedDays": 4,
+    "priority": "high",
+    "checkpoints": [
+      {
+        "id": "unit-05-checkpoint-01",
+        "title": "Print Values",
+        "href": "book/OEBPS/xhtml/Ch04.xhtml#sec4_1"
+      },
+      {
+        "id": "unit-05-checkpoint-02",
+        "title": "Texture and Detail",
+        "href": "book/OEBPS/xhtml/Ch04.xhtml#sec4_2"
+      },
+      {
+        "id": "unit-05-checkpoint-03",
+        "title": "The Zones",
+        "href": "book/OEBPS/xhtml/Ch04.xhtml#sec4_3"
+      },
+      {
+        "id": "unit-05-checkpoint-04",
+        "title": "Previsualization",
+        "href": "book/OEBPS/xhtml/Ch04.xhtml#sec4_4"
+      },
+      {
+        "id": "unit-05-checkpoint-05",
+        "title": "Measuring Zones",
+        "href": "book/OEBPS/xhtml/Ch04.xhtml#sec4_5"
+      },
+      {
+        "id": "unit-05-checkpoint-06",
+        "title": "Summary",
+        "href": "book/OEBPS/xhtml/Ch04.xhtml#sec4_6"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-06",
+    "number": 6,
+    "title": "Exposure",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch05.xhtml",
+    "estimatedDays": 5,
+    "priority": "high",
+    "checkpoints": [
+      {
+        "id": "unit-06-checkpoint-01",
+        "title": "Light Measurement",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_1"
+      },
+      {
+        "id": "unit-06-checkpoint-02",
+        "title": "Exposure Recommendations",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_2"
+      },
+      {
+        "id": "unit-06-checkpoint-03",
+        "title": "The Meter’s Dilemma",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_3"
+      },
+      {
+        "id": "unit-06-checkpoint-04",
+        "title": "Exercise: How Light Meters Really Work",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_4"
+      },
+      {
+        "id": "unit-06-checkpoint-05",
+        "title": "Exposure Detailed",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_5"
+      },
+      {
+        "id": "unit-06-checkpoint-06",
+        "title": "Place and Fall",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_6"
+      },
+      {
+        "id": "unit-06-checkpoint-07",
+        "title": "With Handheld Meters",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_7"
+      },
+      {
+        "id": "unit-06-checkpoint-08",
+        "title": "With In-Camera Meters",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_8"
+      },
+      {
+        "id": "unit-06-checkpoint-09",
+        "title": "Using Smartphone Light Meters with the Zone System",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_9"
+      },
+      {
+        "id": "unit-06-checkpoint-10",
+        "title": "Summary",
+        "href": "book/OEBPS/xhtml/Ch05.xhtml#sec5_10"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-07",
+    "number": 7,
+    "title": "Development",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch06.xhtml",
+    "estimatedDays": 4,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-07-checkpoint-01",
+        "title": "Measuring Subject Contrast with In-Camera Meters",
+        "href": "book/OEBPS/xhtml/Ch06.xhtml#sec6_1"
+      },
+      {
+        "id": "unit-07-checkpoint-02",
+        "title": "Normal Plus Development",
+        "href": "book/OEBPS/xhtml/Ch06.xhtml#sec6_2"
+      },
+      {
+        "id": "unit-07-checkpoint-03",
+        "title": "Normal Minus Development",
+        "href": "book/OEBPS/xhtml/Ch06.xhtml#sec6_3"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-08",
+    "number": 8,
+    "title": "An Overview of the Zone System",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch07.xhtml",
+    "estimatedDays": 2,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-08-checkpoint-01",
+        "title": "Expose for the Shadows and Develop for the Highlights",
+        "href": "book/OEBPS/xhtml/Ch07.xhtml#sec7_2"
+      },
+      {
+        "id": "unit-08-checkpoint-02",
+        "title": "Zone System Frequently Asked Questions",
+        "href": "book/OEBPS/xhtml/Ch07.xhtml#sec7_3"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-09",
+    "number": 9,
+    "title": "Zone System Testing: Method 1",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch08.xhtml",
+    "estimatedDays": 4,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-09-checkpoint-01",
+        "title": "Introduction",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_1"
+      },
+      {
+        "id": "unit-09-checkpoint-02",
+        "title": "Choosing a Photographic Paper",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_2"
+      },
+      {
+        "id": "unit-09-checkpoint-03",
+        "title": "The Use of Equivalent ISO (ASA) Numbers",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_3"
+      },
+      {
+        "id": "unit-09-checkpoint-04",
+        "title": "Zone System Testing: Method 1",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_4"
+      },
+      {
+        "id": "unit-09-checkpoint-05",
+        "title": "Roll Film",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_5"
+      },
+      {
+        "id": "unit-09-checkpoint-06",
+        "title": "Sheet Film",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_6"
+      },
+      {
+        "id": "unit-09-checkpoint-07",
+        "title": "Standard Printing Time Test",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_7"
+      },
+      {
+        "id": "unit-09-checkpoint-08",
+        "title": "Expansion and Contraction Development Times",
+        "href": "book/OEBPS/xhtml/Ch08.xhtml#sec8_8"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-10",
+    "number": 10,
+    "title": "Zone System Testing: Method 2",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch09.xhtml",
+    "estimatedDays": 3,
+    "priority": "low",
+    "checkpoints": [
+      {
+        "id": "unit-10-checkpoint-01",
+        "title": "About the Development Time Charts",
+        "href": "book/OEBPS/xhtml/Ch09.xhtml#sec9_1"
+      },
+      {
+        "id": "unit-10-checkpoint-02",
+        "title": "Development Time Charts",
+        "href": "book/OEBPS/xhtml/Ch09.xhtml#sec9_2"
+      },
+      {
+        "id": "unit-10-checkpoint-03",
+        "title": "Film and Developer: Questions and Answers",
+        "href": "book/OEBPS/xhtml/Ch09.xhtml#sec9_3"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-11",
+    "number": 11,
+    "title": "The Zone System and Digital Photography",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch010.xhtml",
+    "estimatedDays": 3,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-11-checkpoint-01",
+        "title": "Introduction",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_1"
+      },
+      {
+        "id": "unit-11-checkpoint-02",
+        "title": "A Word about Structure and Understanding",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_2"
+      },
+      {
+        "id": "unit-11-checkpoint-03",
+        "title": "Basic Assumptions",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_3"
+      },
+      {
+        "id": "unit-11-checkpoint-04",
+        "title": "Digital and Film Photography",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_4"
+      },
+      {
+        "id": "unit-11-checkpoint-05",
+        "title": "Other Digital Printing Considerations: Large-Scale and Banner Printing",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_5"
+      },
+      {
+        "id": "unit-11-checkpoint-06",
+        "title": "Pixels: Size, Resolution, Bit Depth, and Quality",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_6"
+      },
+      {
+        "id": "unit-11-checkpoint-07",
+        "title": "Optimizing Digital Image Resolution",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_7"
+      },
+      {
+        "id": "unit-11-checkpoint-08",
+        "title": "The Scanning Process",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_8"
+      },
+      {
+        "id": "unit-11-checkpoint-09",
+        "title": "File Size Calculator",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_9"
+      },
+      {
+        "id": "unit-11-checkpoint-10",
+        "title": "Guidelines for Fine Digital Printing",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_10"
+      },
+      {
+        "id": "unit-11-checkpoint-11",
+        "title": "Bit Depth and Digital Exposure",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_11"
+      },
+      {
+        "id": "unit-11-checkpoint-12",
+        "title": "The Zone System of Digital Exposure",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_12"
+      },
+      {
+        "id": "unit-11-checkpoint-13",
+        "title": "A Summary of Digital Exposure Effects",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_13"
+      },
+      {
+        "id": "unit-11-checkpoint-14",
+        "title": "The Zone System and Digital Contrast Control",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_14"
+      },
+      {
+        "id": "unit-11-checkpoint-15",
+        "title": "Raw Converter Choices",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_15"
+      },
+      {
+        "id": "unit-11-checkpoint-16",
+        "title": "An Introduction to Adobe Camera Raw Utility",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_16"
+      },
+      {
+        "id": "unit-11-checkpoint-17",
+        "title": "Summary of Digital Photography Cardinal Rules",
+        "href": "book/OEBPS/xhtml/Ch010.xhtml#sec10_17"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "unit-12",
+    "number": 12,
+    "title": "The Zone System and Studio Photography",
+    "type": "core",
+    "href": "book/OEBPS/xhtml/Ch011.xhtml#Ch011",
+    "estimatedDays": 3,
+    "priority": "medium",
+    "checkpoints": [
+      {
+        "id": "unit-12-checkpoint-01",
+        "title": "About Bill Brandt’s Photograph",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_1"
+      },
+      {
+        "id": "unit-12-checkpoint-02",
+        "title": "Introduction",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_2"
+      },
+      {
+        "id": "unit-12-checkpoint-03",
+        "title": "Digital Workflow and the Power of the Zone System",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_3"
+      },
+      {
+        "id": "unit-12-checkpoint-04",
+        "title": "The Lighting Studio as a Creative Environment",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_4"
+      },
+      {
+        "id": "unit-12-checkpoint-05",
+        "title": "Understanding Flash Meters",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_5"
+      },
+      {
+        "id": "unit-12-checkpoint-06",
+        "title": "The Creative Sketching Process in the Studio",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_6"
+      },
+      {
+        "id": "unit-12-checkpoint-07",
+        "title": "Studio Exposure Methods: Flash Spot and Incident Meters",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_7"
+      },
+      {
+        "id": "unit-12-checkpoint-08",
+        "title": "Understanding the Lighting Studio Zone Chart",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_8"
+      },
+      {
+        "id": "unit-12-checkpoint-09",
+        "title": "Incident Meters Never Lie",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_9"
+      },
+      {
+        "id": "unit-12-checkpoint-10",
+        "title": "The Masterwork Re-creation Process",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_10"
+      },
+      {
+        "id": "unit-12-checkpoint-11",
+        "title": "Some Comments Regarding Equipment and Workflow Equipment",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_11"
+      },
+      {
+        "id": "unit-12-checkpoint-12",
+        "title": "Steps in the Process",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_12"
+      },
+      {
+        "id": "unit-12-checkpoint-13",
+        "title": "Summary of Preceding Steps",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_13"
+      },
+      {
+        "id": "unit-12-checkpoint-14",
+        "title": "The Shooting Process",
+        "href": "book/OEBPS/xhtml/Ch011.xhtml#sec11_14"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  },
+  {
+    "id": "ref-appendices",
+    "number": 1,
+    "title": "Appendices",
+    "type": "reference",
+    "href": "book/OEBPS/xhtml/Appendices.xhtml",
+    "estimatedDays": 1,
+    "priority": "reference",
+    "checkpoints": [
+      {
+        "id": "ref-appendices-checkpoint-01",
+        "title": "Appendix A Color Management, Profiles, and Color Spaces",
+        "href": "book/OEBPS/xhtml/appA.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-02",
+        "title": "Appendix B A Primer on Studio Lighting Photography",
+        "href": "book/OEBPS/xhtml/appB.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-03",
+        "title": "Appendix C What Is a Pixel?",
+        "href": "book/OEBPS/xhtml/appC.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-04",
+        "title": "Appendix D Bit Depth",
+        "href": "book/OEBPS/xhtml/appD.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-05",
+        "title": "Appendix E Exposure and the Digital Linear Effect",
+        "href": "book/OEBPS/xhtml/appE.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-06",
+        "title": "Appendix F Digital Light Meters and the Zone System",
+        "href": "book/OEBPS/xhtml/appF.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-07",
+        "title": "Appendix G A Primer on Basic Film Photography",
+        "href": "book/OEBPS/xhtml/appG.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-08",
+        "title": "Appendix H Films, Developers, and Processing",
+        "href": "book/OEBPS/xhtml/appH.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-09",
+        "title": "Appendix I The Practical Zone System Film and Developer Testing Method",
+        "href": "book/OEBPS/xhtml/appI.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-10",
+        "title": "Appendix J Film and Developer Commentary by Iris Davis",
+        "href": "book/OEBPS/xhtml/appJ.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-11",
+        "title": "Appendix K Alternative Methods for Extreme Expansion and Contraction Development",
+        "href": "book/OEBPS/xhtml/appK.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-12",
+        "title": "Appendix L Contrast Control with Paper Grades",
+        "href": "book/OEBPS/xhtml/appL.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-13",
+        "title": "Appendix M Developer Dilution",
+        "href": "book/OEBPS/xhtml/appM.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-14",
+        "title": "Appendix N Compensating Developers",
+        "href": "book/OEBPS/xhtml/appN.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-15",
+        "title": "Appendix O Inspection Development",
+        "href": "book/OEBPS/xhtml/appO.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-16",
+        "title": "Appendix P Condenser and Diffusion Enlargers",
+        "href": "book/OEBPS/xhtml/appP.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-17",
+        "title": "Appendix Q ASA/ISO Numbers",
+        "href": "book/OEBPS/xhtml/appQ.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-18",
+        "title": "Appendix R Filter Factors, the Reciprocity Effect, and Bellows Extension Factors",
+        "href": "book/OEBPS/xhtml/appR.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-19",
+        "title": "Appendix S A Compensation Method for Inaccurate Meters",
+        "href": "book/OEBPS/xhtml/appS.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-20",
+        "title": "Appendix T Zone System Metering Form: In-Camera Meters",
+        "href": "book/OEBPS/xhtml/appT.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-21",
+        "title": "Appendix U Exposure Record and Checklist for Zone System Testing",
+        "href": "book/OEBPS/xhtml/appU.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-22",
+        "title": "Appendix V Examples: Zone System Applications",
+        "href": "book/OEBPS/xhtml/appV.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-23",
+        "title": "Appendix W Suggested Reading",
+        "href": "book/OEBPS/xhtml/appW.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-24",
+        "title": "Appendix X A Brief Directory of Online Digital and Photography-Related Resources",
+        "href": "book/OEBPS/xhtml/appX.xhtml"
+      },
+      {
+        "id": "ref-appendices-checkpoint-25",
+        "title": "Appendix Y A Brief Glossary of Zone System and Digital Terminology",
+        "href": "book/OEBPS/xhtml/appY.xhtml"
+      }
+    ],
+    "reflectionPrompts": {
+      "coreIdeas": "本章最重要的 3–5 个概念是什么？",
+      "myUnderstanding": "我如何用自己的话理解这些概念？",
+      "bwRelevance": "它对我的黑白摄影有什么帮助？",
+      "questions": "我还有哪些不清楚的地方？",
+      "nextPractice": "下一次拍摄或后期时，我要尝试什么？"
+    }
+  }
+]
