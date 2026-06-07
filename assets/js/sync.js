@@ -21,6 +21,9 @@
   };
   let pushTimer = null;
   let pushInFlight = false;
+  let unsubscribeCloudProgress = null;
+  let listeningSyncCode = '';
+  let lastHandledCloudSavedAt = '';
 
   function readLocal(key) {
     try {
@@ -45,6 +48,10 @@
     } catch (e) {
       // Ignore local cleanup failures.
     }
+  }
+
+  function hasPendingPush() {
+    return !!pushTimer;
   }
 
   function setStatus(nextState, message) {
@@ -285,7 +292,9 @@
 
   async function writeCloudProgress(syncCode, progressData) {
     if (!ensureInitialized()) return false;
-    await getDocRef(syncCode).set(makeCloudDocument(progressData), { merge: false });
+    const cloudDocument = makeCloudDocument(progressData);
+    await getDocRef(syncCode).set(cloudDocument, { merge: false });
+    lastHandledCloudSavedAt = cloudDocument.lastClientSavedAt;
     const syncedAt = nowIso();
     writeLocal(LAST_SYNC_KEY, syncedAt);
     setStatus('synced', 'Synced');
@@ -328,8 +337,67 @@
     clearTimeout(pushTimer);
     setStatus('syncing', 'Sync scheduled');
     pushTimer = setTimeout(function () {
+      pushTimer = null;
       pushProgress(progressData || window.getProgress());
     }, PUSH_DEBOUNCE_MS);
+  }
+
+  function stopRealtimeSync() {
+    if (unsubscribeCloudProgress) {
+      unsubscribeCloudProgress();
+      unsubscribeCloudProgress = null;
+    }
+    listeningSyncCode = '';
+  }
+
+  function isSupportedCloudDocument(data) {
+    return !!(
+      data &&
+      data.app === APP_NAME &&
+      data.schemaVersion === CLOUD_SCHEMA_VERSION &&
+      data.progress
+    );
+  }
+
+  function handleCloudSnapshot(syncCode, snap) {
+    if (!snap.exists || syncCode !== getSyncCode()) return;
+
+    const data = snap.data();
+    if (!isSupportedCloudDocument(data)) {
+      setStatus('error', 'Cloud progress format is unsupported');
+      console.error('Cloud progress document has an unsupported format.');
+      return;
+    }
+
+    const cloudSavedAt = String(data.lastClientSavedAt || '');
+    if (cloudSavedAt && cloudSavedAt === lastHandledCloudSavedAt) return;
+    lastHandledCloudSavedAt = cloudSavedAt;
+
+    const pendingPush = hasPendingPush();
+    const next = mergeProgress(window.getProgress(), data.progress);
+    applyProgress(next);
+    writeLocal(LAST_SYNC_KEY, nowIso());
+    setStatus('synced', 'Synced');
+
+    if (pendingPush) {
+      schedulePush(next);
+    }
+  }
+
+  function startRealtimeSync(syncCode) {
+    syncCode = normalizeSyncCode(syncCode);
+    if (!syncCode || !ensureInitialized()) return false;
+    if (unsubscribeCloudProgress && listeningSyncCode === syncCode) return true;
+
+    stopRealtimeSync();
+    listeningSyncCode = syncCode;
+    unsubscribeCloudProgress = getDocRef(syncCode).onSnapshot(function (snap) {
+      handleCloudSnapshot(syncCode, snap);
+    }, function (e) {
+      setStatus('error', 'Realtime sync failed');
+      console.error('Realtime progress sync failed:', e);
+    });
+    return true;
   }
 
   async function pullProgress(options) {
@@ -384,6 +452,7 @@
       const cloud = await readCloudProgress(syncCode);
       if (!cloud) {
         await writeCloudProgress(syncCode, local);
+        startRealtimeSync(syncCode);
         return { ok: true, mode: 'created_cloud' };
       }
 
@@ -398,6 +467,7 @@
 
       applyProgress(next);
       await writeCloudProgress(syncCode, next);
+      startRealtimeSync(syncCode);
       return { ok: true, mode: options.strategy || 'merge' };
     } catch (e) {
       setStatus('error', 'Sync failed');
@@ -408,6 +478,9 @@
 
   function disableSync() {
     clearTimeout(pushTimer);
+    pushTimer = null;
+    stopRealtimeSync();
+    lastHandledCloudSavedAt = '';
     removeLocal(SYNC_CODE_KEY);
     removeLocal(SYNC_ENABLED_KEY);
     setStatus('local_only', 'Local only');
@@ -427,6 +500,7 @@
 
     if (isEnabled()) {
       await pullProgress({ strategy: 'merge' });
+      startRealtimeSync(getSyncCode());
     }
   }
 
@@ -441,6 +515,8 @@
     pullProgress: pullProgress,
     pushProgress: pushProgress,
     schedulePush: schedulePush,
+    startRealtimeSync: startRealtimeSync,
+    stopRealtimeSync: stopRealtimeSync,
     syncNow: syncNow,
     mergeProgress: mergeProgress,
     init: initSync,

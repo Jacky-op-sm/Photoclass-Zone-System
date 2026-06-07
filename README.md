@@ -143,9 +143,9 @@ docs/firestore.rules
 ```
 
 After deployment, the app syncs invisibly. Progress changes are saved to
-`localStorage` first, then pushed to Firestore. Other devices that open the
-deployed app use the same fixed sync code, pull the Firestore progress, merge it
-with any local progress, and continue syncing automatically.
+`localStorage` first, then pushed to Firestore. Other devices use the same fixed
+sync code, pull the Firestore progress, merge it with any local progress, and
+keep listening for live Firestore updates while the page stays open.
 
 ## Export & Import
 
