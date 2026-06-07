@@ -207,6 +207,27 @@
     return result;
   }
 
+  function hasOwn(object, key) {
+    return Object.prototype.hasOwnProperty.call(object || {}, key);
+  }
+
+  function normalizeReflection(reflection) {
+    const normalized = {};
+    const keys = ['coreIdeas', 'myUnderstanding', 'bwRelevance', 'questions', 'nextPractice'];
+    reflection = reflection || {};
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      normalized[key] = hasOwn(reflection, key) ? String(reflection[key] || '') : '';
+    }
+    return normalized;
+  }
+
+  function preferLocalByTimestamp(localUpdatedAt, cloudUpdatedAt) {
+    if (localUpdatedAt && cloudUpdatedAt) return localUpdatedAt > cloudUpdatedAt;
+    if (localUpdatedAt && !cloudUpdatedAt) return true;
+    return false;
+  }
+
   function earlierDate(a, b) {
     if (!a) return b || null;
     if (!b) return a || null;
@@ -238,20 +259,41 @@
   }
 
   function mergeReflection(localReflection, cloudReflection, localUpdatedAt, cloudUpdatedAt) {
-    const merged = {};
-    const keys = ['coreIdeas', 'myUnderstanding', 'bwRelevance', 'questions', 'nextPractice'];
-    localReflection = localReflection || {};
-    cloudReflection = cloudReflection || {};
-    const preferLocal = !!localUpdatedAt && (!cloudUpdatedAt || localUpdatedAt > cloudUpdatedAt);
+    if (localUpdatedAt || cloudUpdatedAt) {
+      return preferLocalByTimestamp(localUpdatedAt, cloudUpdatedAt) ?
+        normalizeReflection(localReflection) :
+        normalizeReflection(cloudReflection);
+    }
+
+    const merged = normalizeReflection(localReflection);
+    const normalizedCloud = normalizeReflection(cloudReflection);
+    const keys = Object.keys(normalizedCloud);
     for (let i = 0; i < keys.length; i++) {
-      const key = keys[i];
-      if (preferLocal) {
-        merged[key] = localReflection[key] || cloudReflection[key] || '';
-      } else {
-        merged[key] = cloudReflection[key] || localReflection[key] || '';
-      }
+      if (normalizedCloud[keys[i]]) merged[keys[i]] = normalizedCloud[keys[i]];
     }
     return merged;
+  }
+
+  function mergeCheckpoints(localCheckpoints, cloudCheckpoints, localUpdatedAt, cloudUpdatedAt) {
+    localCheckpoints = localCheckpoints || [];
+    cloudCheckpoints = cloudCheckpoints || [];
+    if (localUpdatedAt || cloudUpdatedAt) {
+      return preferLocalByTimestamp(localUpdatedAt, cloudUpdatedAt) ?
+        localCheckpoints.slice() :
+        cloudCheckpoints.slice();
+    }
+    return uniqueArray(localCheckpoints.concat(cloudCheckpoints));
+  }
+
+  function mergeSessionsByTimestamp(localSessions, cloudSessions, localUpdatedAt, cloudUpdatedAt) {
+    localSessions = localSessions || [];
+    cloudSessions = cloudSessions || [];
+    if (localUpdatedAt || cloudUpdatedAt) {
+      return preferLocalByTimestamp(localUpdatedAt, cloudUpdatedAt) ?
+        localSessions.slice() :
+        cloudSessions.slice();
+    }
+    return mergeSessions(localSessions, cloudSessions);
   }
 
   function mergeProgress(localProgress, cloudProgress) {
@@ -278,8 +320,11 @@
       const reflectionUpdatedAt = laterDate(localUnit.reflectionUpdatedAt, cloudUnit.reflectionUpdatedAt);
       const sessionsUpdatedAt = laterDate(localUnit.sessionsUpdatedAt, cloudUnit.sessionsUpdatedAt);
       merged.units[unitId] = {
-        completedCheckpoints: uniqueArray(
-          (localUnit.completedCheckpoints || []).concat(cloudUnit.completedCheckpoints || [])
+        completedCheckpoints: mergeCheckpoints(
+          localUnit.completedCheckpoints,
+          cloudUnit.completedCheckpoints,
+          localUnit.checkpointsUpdatedAt,
+          cloudUnit.checkpointsUpdatedAt
         ),
         reflection: mergeReflection(
           localUnit.reflection,
@@ -287,7 +332,12 @@
           localUnit.reflectionUpdatedAt,
           cloudUnit.reflectionUpdatedAt
         ),
-        sessions: mergeSessions(localUnit.sessions, cloudUnit.sessions),
+        sessions: mergeSessionsByTimestamp(
+          localUnit.sessions,
+          cloudUnit.sessions,
+          localUnit.sessionsUpdatedAt,
+          cloudUnit.sessionsUpdatedAt
+        ),
         updatedAt: laterDate(localUnit.updatedAt, cloudUnit.updatedAt),
         checkpointsUpdatedAt: checkpointsUpdatedAt,
         reflectionUpdatedAt: reflectionUpdatedAt,
