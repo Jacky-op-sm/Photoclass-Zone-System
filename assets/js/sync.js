@@ -70,7 +70,15 @@
   }
 
   function isConfigured() {
-    return !!(window.PHOTOCLASS_FIREBASE_CONFIG && window.firebase && window.firebase.firestore);
+    const config = window.PHOTOCLASS_FIREBASE_CONFIG || {};
+    return !!(
+      config.apiKey &&
+      config.authDomain &&
+      config.projectId &&
+      config.appId &&
+      window.firebase &&
+      window.firebase.firestore
+    );
   }
 
   function ensureInitialized() {
@@ -121,6 +129,18 @@
 
   function getSyncCode() {
     return readLocal(SYNC_CODE_KEY) || '';
+  }
+
+  function getAutoSyncCode() {
+    return normalizeSyncCode(window.PHOTOCLASS_SYNC_CODE);
+  }
+
+  function enableLocalSyncCode(syncCode) {
+    syncCode = normalizeSyncCode(syncCode);
+    if (!syncCode) return false;
+    writeLocal(SYNC_CODE_KEY, syncCode);
+    writeLocal(SYNC_ENABLED_KEY, 'true');
+    return true;
   }
 
   function isEnabled() {
@@ -352,8 +372,7 @@
     options = options || {};
     syncCode = normalizeSyncCode(syncCode);
     if (!syncCode) throw new Error('Sync code is required.');
-    writeLocal(SYNC_CODE_KEY, syncCode);
-    writeLocal(SYNC_ENABLED_KEY, 'true');
+    enableLocalSyncCode(syncCode);
 
     if (!ensureInitialized()) {
       return { ok: false, reason: 'unconfigured' };
@@ -394,14 +413,20 @@
     setStatus('local_only', 'Local only');
   }
 
-  function initSync() {
+  async function initSync() {
     if (!isConfigured()) {
       setStatus('unconfigured', 'Firebase not configured');
       return;
     }
-    ensureInitialized();
+    if (!ensureInitialized()) return;
+
+    const autoSyncCode = getAutoSyncCode();
+    if (autoSyncCode) {
+      enableLocalSyncCode(autoSyncCode);
+    }
+
     if (isEnabled()) {
-      pullProgress({ strategy: 'merge' });
+      await pullProgress({ strategy: 'merge' });
     }
   }
 
@@ -427,4 +452,3 @@
     initSync();
   }
 })();
-

@@ -104,15 +104,15 @@ Data includes:
 - Reflection text for each unit
 - Session logs (date, minutes, note)
 
-By default, progress stays on your computer. Optional Firebase Firestore sync
-can be enabled from the Dashboard after Firebase is configured.
+Progress is saved locally first, then automatically synced to Firebase
+Firestore when the deployed app has Firebase configured.
 
-## Optional Cloud Sync
+## Cloud Sync
 
 Cloud sync uses:
 
 - Firebase Firestore
-- One sync code shared across devices
+- One fixed sync code shared across devices
 - `localStorage` as the local cache
 - No login and no PIN
 
@@ -121,17 +121,8 @@ To configure Firebase:
 1. Create a Firebase project.
 2. Enable Firestore.
 3. Add a Firebase Web App.
-4. Copy the Web App config into:
-
-```text
-assets/js/firebase-config.js
-```
-
-Use this file as a template:
-
-```text
-assets/js/firebase-config.example.js
-```
+4. Put the Web App config and the fixed `PHOTOCLASS_SYNC_CODE` in
+   `assets/js/firebase-config.js`.
 
 Recommended Firestore collection:
 
@@ -151,8 +142,10 @@ Copyable Firestore rules are also available in:
 docs/firestore.rules
 ```
 
-After configuration, open the Dashboard, click **Enable Sync**, and use the same
-sync code on Mac and iPad.
+After deployment, the app syncs invisibly. Progress changes are saved to
+`localStorage` first, then pushed to Firestore. Other devices that open the
+deployed app use the same fixed sync code, pull the Firestore progress, merge it
+with any local progress, and continue syncing automatically.
 
 ## Export & Import
 
