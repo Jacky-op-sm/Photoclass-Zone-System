@@ -66,6 +66,7 @@ function getUnitProgress(unitId) {
 function ensureUnitData(unitId) {
   const data = getProgress();
   if (!data.units[unitId]) {
+    const now = new Date().toISOString();
     data.units[unitId] = {
       completedCheckpoints: [],
       reflection: {
@@ -76,6 +77,10 @@ function ensureUnitData(unitId) {
         nextPractice: '',
       },
       sessions: [],
+      updatedAt: now,
+      checkpointsUpdatedAt: null,
+      reflectionUpdatedAt: null,
+      sessionsUpdatedAt: null,
     };
   }
   return data;
@@ -87,12 +92,15 @@ function toggleCheckpoint(unitId, checkpointId) {
   const data = ensureUnitData(unitId);
   const unitData = data.units[unitId];
   const idx = unitData.completedCheckpoints.indexOf(checkpointId);
+  const now = new Date().toISOString();
 
   if (idx === -1) {
     unitData.completedCheckpoints.push(checkpointId);
   } else {
     unitData.completedCheckpoints.splice(idx, 1);
   }
+  unitData.updatedAt = now;
+  unitData.checkpointsUpdatedAt = now;
 
   return saveProgress(data);
 }
@@ -116,7 +124,10 @@ function saveReflection(unitId, field, value) {
       nextPractice: '',
     };
   }
+  const now = new Date().toISOString();
   data.units[unitId].reflection[field] = value;
+  data.units[unitId].updatedAt = now;
+  data.units[unitId].reflectionUpdatedAt = now;
   return saveProgress(data);
 }
 
@@ -133,6 +144,7 @@ function addSession(unitId, session) {
   if (!data.units[unitId].sessions) {
     data.units[unitId].sessions = [];
   }
+  const now = new Date().toISOString();
   // Generate a simple unique id
   const sessionId = 'session-' + Date.now();
   data.units[unitId].sessions.push({
@@ -141,15 +153,20 @@ function addSession(unitId, session) {
     minutes: session.minutes || 45,
     note: session.note || '',
   });
+  data.units[unitId].updatedAt = now;
+  data.units[unitId].sessionsUpdatedAt = now;
   return saveProgress(data);
 }
 
 function deleteSession(unitId, sessionId) {
   const data = getProgress();
   if (!data.units[unitId] || !data.units[unitId].sessions) return false;
+  const now = new Date().toISOString();
   data.units[unitId].sessions = data.units[unitId].sessions.filter(
     function (s) { return s.id !== sessionId; }
   );
+  data.units[unitId].updatedAt = now;
+  data.units[unitId].sessionsUpdatedAt = now;
   return saveProgress(data);
 }
 

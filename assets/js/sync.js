@@ -21,6 +21,8 @@
   };
   let pushTimer = null;
   let pushInFlight = false;
+  let needsPushAfterFlight = false;
+  let latestQueuedProgress = null;
   let unsubscribeCloudProgress = null;
   let listeningSyncCode = '';
   let lastHandledCloudSavedAt = '';
@@ -235,14 +237,19 @@
     return merged;
   }
 
-  function mergeReflection(localReflection, cloudReflection) {
+  function mergeReflection(localReflection, cloudReflection, localUpdatedAt, cloudUpdatedAt) {
     const merged = {};
     const keys = ['coreIdeas', 'myUnderstanding', 'bwRelevance', 'questions', 'nextPractice'];
     localReflection = localReflection || {};
     cloudReflection = cloudReflection || {};
+    const preferLocal = !!localUpdatedAt && (!cloudUpdatedAt || localUpdatedAt > cloudUpdatedAt);
     for (let i = 0; i < keys.length; i++) {
       const key = keys[i];
-      merged[key] = cloudReflection[key] || localReflection[key] || '';
+      if (preferLocal) {
+        merged[key] = localReflection[key] || cloudReflection[key] || '';
+      } else {
+        merged[key] = cloudReflection[key] || localReflection[key] || '';
+      }
     }
     return merged;
   }
@@ -267,12 +274,24 @@
     Object.keys(unitIds).forEach(function (unitId) {
       const localUnit = localUnits[unitId] || {};
       const cloudUnit = cloudUnits[unitId] || {};
+      const checkpointsUpdatedAt = laterDate(localUnit.checkpointsUpdatedAt, cloudUnit.checkpointsUpdatedAt);
+      const reflectionUpdatedAt = laterDate(localUnit.reflectionUpdatedAt, cloudUnit.reflectionUpdatedAt);
+      const sessionsUpdatedAt = laterDate(localUnit.sessionsUpdatedAt, cloudUnit.sessionsUpdatedAt);
       merged.units[unitId] = {
         completedCheckpoints: uniqueArray(
           (localUnit.completedCheckpoints || []).concat(cloudUnit.completedCheckpoints || [])
         ),
-        reflection: mergeReflection(localUnit.reflection, cloudUnit.reflection),
+        reflection: mergeReflection(
+          localUnit.reflection,
+          cloudUnit.reflection,
+          localUnit.reflectionUpdatedAt,
+          cloudUnit.reflectionUpdatedAt
+        ),
         sessions: mergeSessions(localUnit.sessions, cloudUnit.sessions),
+        updatedAt: laterDate(localUnit.updatedAt, cloudUnit.updatedAt),
+        checkpointsUpdatedAt: checkpointsUpdatedAt,
+        reflectionUpdatedAt: reflectionUpdatedAt,
+        sessionsUpdatedAt: sessionsUpdatedAt,
       };
     });
 
@@ -316,7 +335,11 @@
     if (!isEnabled()) return false;
     const syncCode = getSyncCode();
     if (!syncCode || !ensureInitialized()) return false;
-    if (pushInFlight) return false;
+    if (pushInFlight) {
+      needsPushAfterFlight = true;
+      latestQueuedProgress = progressData || window.getProgress();
+      return false;
+    }
     pushInFlight = true;
     setStatus('syncing', 'Syncing');
     try {
@@ -328,17 +351,31 @@
       return false;
     } finally {
       pushInFlight = false;
+      if (needsPushAfterFlight) {
+        const nextProgress = latestQueuedProgress || window.getProgress();
+        needsPushAfterFlight = false;
+        latestQueuedProgress = null;
+        schedulePush(nextProgress);
+      }
     }
   }
 
   function schedulePush(progressData) {
     if (!isEnabled()) return;
     if (!ensureInitialized()) return;
+    latestQueuedProgress = progressData || window.getProgress();
+    if (pushInFlight) {
+      needsPushAfterFlight = true;
+      setStatus('syncing', 'Sync queued');
+      return;
+    }
     clearTimeout(pushTimer);
     setStatus('syncing', 'Sync scheduled');
     pushTimer = setTimeout(function () {
       pushTimer = null;
-      pushProgress(progressData || window.getProgress());
+      const nextProgress = latestQueuedProgress || window.getProgress();
+      latestQueuedProgress = null;
+      pushProgress(nextProgress);
     }, PUSH_DEBOUNCE_MS);
   }
 

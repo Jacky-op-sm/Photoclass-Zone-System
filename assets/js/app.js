@@ -32,6 +32,9 @@
     // --- Header ---
     shell.appendChild(renderHeader());
 
+    // --- Sync Status ---
+    shell.appendChild(renderSyncStatus());
+
     // --- Overall Progress ---
     shell.appendChild(renderOverallProgress());
 
@@ -83,6 +86,63 @@
     }
 
     return scale;
+  }
+
+  function renderSyncStatus() {
+    const wrap = document.createElement('div');
+    wrap.className = 'sync-status-pill';
+    wrap.setAttribute('aria-live', 'polite');
+    wrap.appendChild(renderSyncStatusDot('local_only'));
+    wrap.appendChild(document.createTextNode('Local only'));
+    updateSyncStatusElement(wrap, getCurrentSyncStatus());
+    return wrap;
+  }
+
+  function renderSyncStatusDot(state) {
+    const dot = document.createElement('span');
+    dot.className = 'sync-status-dot';
+    dot.setAttribute('aria-hidden', 'true');
+    dot.setAttribute('data-state', state || 'local_only');
+    return dot;
+  }
+
+  function getCurrentSyncStatus() {
+    if (window.PhotoClassSync && window.PhotoClassSync.getStatus) {
+      return window.PhotoClassSync.getStatus();
+    }
+    return {
+      state: 'local_only',
+      message: 'Local only',
+      enabled: false,
+      configured: false,
+      lastSyncedAt: null,
+    };
+  }
+
+  function getSyncStatusLabel(syncStatus) {
+    if (!syncStatus || !syncStatus.configured) return 'Local only';
+    if (!syncStatus.enabled) return 'Local only';
+    if (syncStatus.state === 'syncing') return 'Syncing';
+    if (syncStatus.state === 'error') return 'Sync issue';
+    if (syncStatus.state === 'unconfigured') return 'Local only';
+    return syncStatus.lastSyncedAt ? 'Synced' : 'Cloud sync on';
+  }
+
+  function updateSyncStatusElement(el, syncStatus) {
+    if (!el) return;
+    const state = syncStatus && syncStatus.enabled ? syncStatus.state : 'local_only';
+    el.setAttribute('data-state', state || 'local_only');
+    el.innerHTML = '';
+    el.appendChild(renderSyncStatusDot(state));
+    el.appendChild(document.createTextNode(getSyncStatusLabel(syncStatus)));
+    if (syncStatus && syncStatus.lastSyncedAt) {
+      const date = new Date(syncStatus.lastSyncedAt);
+      if (!Number.isNaN(date.getTime())) {
+        el.title = 'Last synced ' + date.toLocaleString();
+      }
+    } else {
+      el.removeAttribute('title');
+    }
   }
 
   // ── Overall Progress ────────────────────────────────────────
@@ -440,6 +500,10 @@
     if (!progressData) return;
     progressData = getProgress();
     render();
+  });
+
+  window.addEventListener('photoclass-sync-status', function (event) {
+    updateSyncStatusElement(document.querySelector('.sync-status-pill'), event.detail);
   });
 
 })();

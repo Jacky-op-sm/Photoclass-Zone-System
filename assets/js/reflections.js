@@ -228,7 +228,7 @@
 
     const saveState = document.createElement('div');
     saveState.className = 'reflection-save-state';
-    saveState.textContent = 'Saved locally';
+    saveState.textContent = 'Saved';
     panel.appendChild(saveState);
 
     const fields = [
@@ -274,7 +274,7 @@
         saveState.classList.add('is-active');
         debounceTimer = setTimeout(function () {
           saveReflection(unit.id, f.key, textarea.value);
-          saveState.textContent = 'Saved locally';
+          saveState.textContent = 'Saved';
           setTimeout(function () { saveState.classList.remove('is-active'); }, 1600);
         }, 600);
       });
