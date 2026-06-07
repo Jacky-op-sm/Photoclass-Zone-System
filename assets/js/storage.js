@@ -33,16 +33,27 @@ function getProgress() {
   }
 }
 
-function saveProgress(data) {
+function saveProgress(data, options) {
+  options = options || {};
   try {
     data.version = STORAGE_VERSION;
     data.lastStudiedAt = new Date().toISOString().slice(0, 10);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    if (options.sync !== false && window.PhotoClassSync && window.PhotoClassSync.schedulePush) {
+      window.PhotoClassSync.schedulePush(data);
+    }
     return true;
   } catch (e) {
     console.error('Failed to save progress:', e);
     return false;
   }
+}
+
+function setProgressData(data, options) {
+  options = options || {};
+  if (!data || typeof data !== 'object') return false;
+  if (!data.units) data.units = {};
+  return saveProgress(data, options);
 }
 
 // ── Unit-level helpers ────────────────────────────────────────
@@ -161,12 +172,17 @@ function importProgress(jsonString) {
     if (!data || typeof data.version !== 'number' || !data.units) {
       return { success: false, error: 'Invalid progress data: missing version or units.' };
     }
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+    setProgressData(data);
     return { success: true };
   } catch (e) {
     return { success: false, error: 'Could not parse JSON: ' + e.message };
   }
 }
+
+window.createEmptyProgress = createEmptyProgress;
+window.getProgress = getProgress;
+window.saveProgress = saveProgress;
+window.setProgressData = setProgressData;
 
 function resetProgress() {
   try {

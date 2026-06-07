@@ -1,0 +1,25 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /progress_profiles/{syncCode} {
+      allow get: if true;
+      allow list: if false;
+
+      allow create, update: if
+        request.resource.data.keys().hasOnly([
+          'schemaVersion',
+          'app',
+          'progress',
+          'updatedAt',
+          'lastDevice',
+          'lastClientSavedAt'
+        ]) &&
+        request.resource.data.schemaVersion == 1 &&
+        request.resource.data.app == 'photoclass-zone-system';
+
+      allow delete: if false;
+    }
+  }
+}
+

@@ -23,6 +23,9 @@
 
   // ── Render ──────────────────────────────────────────────────
   function render() {
+    const existing = document.querySelector('.page-shell');
+    if (existing) existing.remove();
+
     const shell = document.createElement('div');
     shell.className = 'page-shell';
 
@@ -44,7 +47,7 @@
     // --- Footer ---
     const footer = document.createElement('div');
     footer.className = 'app-footer';
-    footer.textContent = 'PhotoClass: Zone System Study — Private study log. Local only.';
+    footer.textContent = 'PhotoClass: Zone System Study — Private study log.';
     shell.appendChild(footer);
 
     document.body.appendChild(shell);
@@ -328,7 +331,157 @@
     controls.appendChild(resetBtn);
 
     section.appendChild(controls);
+
+    section.appendChild(renderSyncPanel());
     return section;
+  }
+
+  // ── Sync panel ──────────────────────────────────────────────
+  function renderSyncPanel() {
+    const panel = document.createElement('div');
+    panel.className = 'sync-panel';
+
+    const sync = window.PhotoClassSync;
+    const status = sync && sync.getStatus ? sync.getStatus() : {
+      state: 'unavailable',
+      message: 'Sync unavailable',
+      enabled: false,
+      configured: false,
+      syncCode: '',
+      lastSyncedAt: null,
+    };
+
+    const header = document.createElement('div');
+    header.className = 'sync-panel-header';
+
+    const title = document.createElement('div');
+    title.className = 'sync-panel-title';
+    title.textContent = 'Cloud Sync';
+    header.appendChild(title);
+
+    const badge = document.createElement('span');
+    badge.className = 'sync-status-badge';
+    badge.setAttribute('data-state', status.state);
+    badge.textContent = getSyncStatusLabel(status);
+    header.appendChild(badge);
+
+    panel.appendChild(header);
+
+    const body = document.createElement('div');
+    body.className = 'sync-panel-body';
+
+    const detail = document.createElement('p');
+    detail.className = 'sync-detail';
+    detail.textContent = getSyncDetailText(status);
+    body.appendChild(detail);
+
+    if (status.enabled && status.syncCode) {
+      const code = document.createElement('code');
+      code.className = 'sync-code';
+      code.textContent = status.syncCode;
+      body.appendChild(code);
+    }
+
+    const controls = document.createElement('div');
+    controls.className = 'sync-controls';
+
+    if (!status.enabled) {
+      const input = document.createElement('input');
+      input.className = 'sync-input';
+      input.type = 'text';
+      input.placeholder = 'sync code';
+      input.value = sync && sync.generateSyncCode ? sync.generateSyncCode() : '';
+      input.setAttribute('aria-label', 'Sync code');
+      controls.appendChild(input);
+
+      const enableBtn = document.createElement('button');
+      enableBtn.className = 'btn-data';
+      enableBtn.textContent = 'Enable Sync';
+      enableBtn.disabled = !sync || !status.configured;
+      enableBtn.addEventListener('click', function () {
+        handleEnableSync(input.value);
+      });
+      controls.appendChild(enableBtn);
+    } else {
+      const syncNowBtn = document.createElement('button');
+      syncNowBtn.className = 'btn-data';
+      syncNowBtn.textContent = 'Sync Now';
+      syncNowBtn.addEventListener('click', handleSyncNow);
+      controls.appendChild(syncNowBtn);
+
+      const disconnectBtn = document.createElement('button');
+      disconnectBtn.className = 'btn-data';
+      disconnectBtn.textContent = 'Disconnect';
+      disconnectBtn.addEventListener('click', handleDisconnectSync);
+      controls.appendChild(disconnectBtn);
+    }
+
+    body.appendChild(controls);
+
+    if (!status.configured) {
+      const note = document.createElement('p');
+      note.className = 'sync-note';
+      note.textContent = 'Fill assets/js/firebase-config.js with your Firebase Web App config to enable sync.';
+      body.appendChild(note);
+    }
+
+    panel.appendChild(body);
+    return panel;
+  }
+
+  function getSyncStatusLabel(status) {
+    if (!status.configured) return 'Not configured';
+    if (!status.enabled) return 'Local only';
+    if (status.state === 'syncing') return 'Syncing';
+    if (status.state === 'error') return 'Sync failed';
+    return 'Synced';
+  }
+
+  function getSyncDetailText(status) {
+    if (!status.configured) return 'Progress is saved locally until Firebase is configured.';
+    if (!status.enabled) return 'Use one sync code on Mac and iPad to share the same progress.';
+    if (status.lastSyncedAt) {
+      return status.message + ' · Last sync: ' + new Date(status.lastSyncedAt).toLocaleString();
+    }
+    return status.message || 'Sync enabled';
+  }
+
+  async function handleEnableSync(syncCode) {
+    if (!window.PhotoClassSync) return;
+    syncCode = String(syncCode || '').trim();
+    if (!syncCode) {
+      showToast('Enter a sync code first.');
+      return;
+    }
+
+    showToast('Enabling sync...');
+    const result = await window.PhotoClassSync.enableSync(syncCode, { strategy: 'merge' });
+    progressData = getProgress();
+    render();
+
+    if (result && result.ok) {
+      showToast('Sync enabled.');
+    } else if (result && result.reason === 'unconfigured') {
+      showToast('Firebase is not configured yet.');
+    } else {
+      showToast('Could not enable sync.');
+    }
+  }
+
+  async function handleSyncNow() {
+    if (!window.PhotoClassSync) return;
+    showToast('Syncing...');
+    const result = await window.PhotoClassSync.syncNow();
+    progressData = getProgress();
+    render();
+    showToast(result && result.ok ? 'Synced.' : 'Sync failed.');
+  }
+
+  function handleDisconnectSync() {
+    if (!window.PhotoClassSync) return;
+    window.PhotoClassSync.disableSync();
+    render();
+    showToast('Cloud sync disconnected. Local progress kept.');
   }
 
   // ── Export handler ──────────────────────────────────────────
@@ -434,4 +587,16 @@
   } else {
     init();
   }
+
+  window.addEventListener('photoclass-sync-progress-updated', function () {
+    if (!progressData) return;
+    progressData = getProgress();
+    render();
+  });
+
+  window.addEventListener('photoclass-sync-status', function () {
+    if (!progressData) return;
+    progressData = getProgress();
+    render();
+  });
 })();

@@ -319,4 +319,10 @@
   } else {
     init();
   }
+
+  window.addEventListener('photoclass-sync-progress-updated', function () {
+    progressData = getProgress();
+    document.body.querySelector('.unit-page')?.remove();
+    if (unit) render();
+  });
 })();

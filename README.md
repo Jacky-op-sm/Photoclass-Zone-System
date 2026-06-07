@@ -1,6 +1,6 @@
 # PhotoClass: Zone System Study
 
-A private, local-only study dashboard for *The Practical Zone System for Film and Digital Photography* by Chris Johnson.
+A private study dashboard for *The Practical Zone System for Film and Digital Photography* by Chris Johnson.
 
 ## What This App Is
 
@@ -14,9 +14,9 @@ A private, local-only study dashboard for *The Practical Zone System for Film an
 - ❌ NOT a book reader — open the original XHTML chapters separately
 - ❌ NOT a gallery or photo management tool
 - ❌ NOT an online course platform
-- ❌ NOT publicly deployed — it's for your private local study only
+- ❌ NOT a public multi-user course — it's for your private study only
 - ❌ NOT a rewritten version of the book content
-- ❌ No login, no backend, no database
+- ❌ No required login
 
 ## Setup
 
@@ -104,7 +104,55 @@ Data includes:
 - Reflection text for each unit
 - Session logs (date, minutes, note)
 
-**No data is sent anywhere. Everything stays on your computer.**
+By default, progress stays on your computer. Optional Firebase Firestore sync
+can be enabled from the Dashboard after Firebase is configured.
+
+## Optional Cloud Sync
+
+Cloud sync uses:
+
+- Firebase Firestore
+- One sync code shared across devices
+- `localStorage` as the local cache
+- No login and no PIN
+
+To configure Firebase:
+
+1. Create a Firebase project.
+2. Enable Firestore.
+3. Add a Firebase Web App.
+4. Copy the Web App config into:
+
+```text
+assets/js/firebase-config.js
+```
+
+Use this file as a template:
+
+```text
+assets/js/firebase-config.example.js
+```
+
+Recommended Firestore collection:
+
+```text
+progress_profiles
+```
+
+See the full execution plan and draft Firestore rules in:
+
+```text
+docs/firebase-sync-plan.md
+```
+
+Copyable Firestore rules are also available in:
+
+```text
+docs/firestore.rules
+```
+
+After configuration, open the Dashboard, click **Enable Sync**, and use the same
+sync code on Mac and iPad.
 
 ## Export & Import
 
@@ -151,6 +199,7 @@ or share the `book/` directory with others.
 ## Tech Stack
 
 - Plain HTML, CSS, JavaScript (no frameworks)
+- Optional Firebase Firestore cloud sync
 - Python 3 (for EPUB tools and local serving)
 - `localStorage` for data persistence
 - Python 3 standard library for private local serving

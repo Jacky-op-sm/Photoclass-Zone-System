@@ -299,4 +299,9 @@
   } else {
     init();
   }
+
+  window.addEventListener('photoclass-sync-progress-updated', function () {
+    progressData = getProgress();
+    render();
+  });
 })();
