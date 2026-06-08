@@ -1,0 +1,251 @@
+# 各单元定制化反思问题
+
+> 生成时间：2026-06-08
+> 设计原则：基于每章具体文本内容，提出能帮助回顾和反思的针对性问题，替代原先统一的 5 个通用问题。
+
+---
+
+## Unit 1: Why and How to Read this Book
+
+**核心理念 (coreIdeas)**
+本章介绍了 Zone System 是一种面向胶片和数码的通用视觉语言。请列出你认为最重要的 3–5 个核心理念。
+
+**我的理解 (myUnderstanding)**
+作者建议所有摄影师（包括纯数码摄影师）把本书当作"叙事"来读。你是否赞同这种阅读方式？用你自己的话解释为什么。
+
+**黑白摄影关联 (bwRelevance)**
+本章提到许多数码后期工具（如 Photoshop 的加深和减淡工具）借用了暗房隐喻——这对你理解后期操作有什么启发？
+
+**疑问 (questions)**
+根据你的个人情况（胶片/数码/混合），你会如何规划本书的阅读路径？有没有哪些章节你觉得可以跳过或需要先读？
+
+**下一步实践 (nextPractice)**
+Imogen Cunningham 说 "Amateur is the French word for lover"。在开始系统学习之前，写下你对摄影最初的热爱和最想解决的问题。
+
+---
+
+## Unit 2: Will It Come Out?
+
+**核心理念 (coreIdeas)**
+本章介绍了摄影师面临的两大核心问题：正确曝光和反差控制。用自己的话总结 Zone System 如何解决这两个问题。
+
+**我的理解 (myUnderstanding)**
+作者将 Zone System 比作音乐理论——学会乐理就能演奏任何乐谱。这个类比如何帮你理解 Zone System 的通用性？
+
+**黑白摄影关联 (bwRelevance)**
+本章澄清了许多关于 Zone System 的常见误解（如"必须用座机""必须有点测光表"等）。哪个误解曾让你对 Zone System 望而生畏？
+
+**疑问 (questions)**
+关于 Zone System 能否用于彩色胶片 / 智能手机 / 电子闪光灯——读完本章后，还有哪些场景你不太确定如何应用？
+
+**下一步实践 (nextPractice)**
+Wynn Bullock 说他更愿意"专注于对周围世界的反应"。在接下来的拍摄中，尝试先用心感受再思考技术——记录这种体验。
+
+---
+
+## Unit 3: Print Quality, Negative Contrast, and Dynamic Range
+
+**核心理念 (coreIdeas)**
+用自己的话解释 "Photographic Procrustean Beds" 的比喻：为什么现代相纸是"普洛克路斯忒斯之床"？数码摄影中对应的概念是什么？
+
+**我的理解 (myUnderstanding)**
+四个曝光/显影问题中，欠曝和过显是"致命的"——为什么它们在后期不可补救？这和数码摄影中的"高光裁切"与"噪点阴影"有何对应关系？
+
+**黑白摄影关联 (bwRelevance)**
+为什么建议先选定一种标准纸张等级（如 2 号纸），然后让底片去适应它，而不是根据每张底片切换纸张？这对你的工作流程有何启示？
+
+**疑问 (questions)**
+在胶片中，曝光决定阴影密度，显影决定高光密度——你是否能用自己的话来解释为什么会这样？还有哪里不清楚？
+
+**下一步实践 (nextPractice)**
+找一张你自己的问题照片（或底片），对照本章的诊断标准，判断它属于哪种问题（欠曝/过曝/欠显/过显）。
+
+---
+
+## Unit 4: The Control of Negative Contrast
+
+**核心理念 (coreIdeas)**
+"Expose for the shadows and develop for the highlights" 是本书最核心的法则。参照 Figure 3.1，解释为什么增加显影时间主要影响高光密度而阴影几乎不动。
+
+**我的理解 (myUnderstanding)**
+Normal (N)、N- 和 N+ 三种显影方式分别在什么场景下使用？用你自己的话给每种方式编写一条简短的"使用说明"。
+
+**黑白摄影关联 (bwRelevance)**
+对于胶片摄影师："对阴影曝光，对高光显影"。对于数码摄影师："对高光曝光，对阴影处理"。为什么规则正好相反？
+
+**疑问 (questions)**
+文中提到过曝+欠显（可补救）与欠曝+过显（致命）两组问题——你还能想出其他组合吗？每种组合的后果会是什么？
+
+**下一步实践 (nextPractice)**
+如果你有胶片设备，尝试在同一个高反差场景中拍摄两张：一张按正常推荐曝光，一张按你对 Zone III 的预视化来调整。比较二者的不同。
+
+---
+
+## Unit 5: The Zone
+
+**核心理念 (coreIdeas)**
+Zone 有三个定义——Print Values / Texture and Detail / Photographic Measurement。分别解释它们，并说明它们如何共同构成 Zone System 的基础。
+
+**我的理解 (myUnderstanding)**
+不看笔记，凭记忆列出 Zone 0 到 Zone IX 的纹理特征和常见对应物体。哪个 Zone 的描述让你印象最深、最容易在实践中参考？
+
+**黑白摄影关联 (bwRelevance)**
+Zone III 是"重要阴影区"，Zone VII 是"重要高光区"。这对你决定曝光和显影有什么指导意义？在你昨天拍摄的照片中，这些区域各落在哪里？
+
+**疑问 (questions)**
+作者将 Zone Scale 分为"无纹理""有限纹理""全纹理"三个区域。尝试找出你周围哪些物体属于这些不同区域——还有判断困难的地方吗？
+
+**下一步实践 (nextPractice)**
+用你的测光表（或相机）在一个场景中选取两个不同亮度的区域，验证 1 个 EV/Zone 的 2:1 光比关系。如果可能，拍摄下来留着以后参考。
+
+---
+
+## Unit 6: Exposure
+
+**核心理念 (coreIdeas)**
+用自己的话解释"测光表的困境" (The Meter's Dilemma)：为什么所有测光表都将读数置于 Zone V？这为什么是"谎言"而非缺陷？
+
+**我的理解 (myUnderstanding)**
+完成本章的手机相机演示（对着纯白/纯黑表面拍摄），或者完成 5 帧练习。你得到了什么结果？这如何改变了你对"正确曝光"的理解？
+
+**黑白摄影关联 (bwRelevance)**
+"Place and Fall" 的概念：如果将关键阴影放置在 Zone III，高光会"落在"对应的 Zone。在你的实际拍摄中，这意味着什么？
+
+**疑问 (questions)**
+手持测光表（点测/广角/入射）、机内测光表、手机测光 App——你平时使用哪种？在 Zone System 中它们各自的优缺点是什么？
+
+**下一步实践 (nextPractice)**
+下次拍摄时，不要依赖自动模式。手动找到一个 Zone III 区域，测光后减两档曝光——然后比较结果和自动曝光的区别。
+
+---
+
+## Unit 7: Development
+
+**核心理念 (coreIdeas)**
+用你自己的话总结 Zone Metering Form 的使用方法，包括 Reference Reading（参考读数）和 Measurement Reading（测量读数）的区别。
+
+**我的理解 (myUnderstanding)**
+对比 Figure 6.15/6.16 (N+1, N+2) 和 Figure 6.22/6.23 (N-1, N-2)——不同级别的扩张和压缩对 Zone III-VII 的影响有何规律？Zone V 为什么是"分界线"？
+
+**黑白摄影关联 (bwRelevance)**
+对低对比度场景用 N+ 显影、对高对比度场景用 N- 显影——这对你实际拍摄不同光线环境时的决策有什么帮助？
+
+**疑问 (questions)**
+对 135 胶卷用户来说，不能逐帧显影是一个限制。你如何在实际拍摄中管理这个限制（例如按对比度分组拍摄、使用可换后背等）？
+
+**下一步实践 (nextPractice)**
+将本章的三个示例（正常对比度 / 低对比度 / 高对比度）的 Zone 放置图自己画一遍，并计算出正确的曝光和显影时间。
+
+---
+
+## Unit 8: An Overview of the Zone System
+
+**核心理念 (coreIdeas)**
+Zone System 工作流的 5 个步骤是什么？尝试不看笔记，凭记忆写出每一步的关键操作。
+
+**我的理解 (myUnderstanding)**
+ASA（ISO）在 Zone System 中扮演什么角色？如果你发现正常放置 Zone III 后阴影仍然太暗，你应该如何调整 ASA？如何调整 Normal Development Time？
+
+**黑白摄影关联 (bwRelevance)**
+彩色反转片（正片）和彩色负片在使用 Zone System 时有什么本质区别？为什么反转片更需要精确的 Zone 曝光？
+
+**疑问 (questions)**
+回顾本章 FAQ——哪个问题你最关心但还没完全理解？（例如：新闻摄影中如何快速使用 / 如何覆盖自动测光系统 / 如何确定 Normal Development Time？）
+
+**下一步实践 (nextPractice)**
+用自己的相机实验四种自动曝光覆盖方法：手动模式 / 曝光补偿拨盘 / 记忆锁 / ASA 调整。哪种最方便快捷？将你的选择记下来。
+
+---
+
+## Unit 9: Zone System Testing: Method 1
+
+**核心理念 (coreIdeas)**
+测试方法 1 的三个目标是什么？为什么标准印相时间 (SPT) 的确定如此关键——如果 SPT 选错了会怎样？
+
+**我的理解 (myUnderstanding)**
+解释为什么包围曝光等效于改变 ASA。如果起始曝光是 f/16 1/60 at ASA 400，减少半档曝光等效于 ASA 多少？增加一档半呢？
+
+**黑白摄影关联 (bwRelevance)**
+为什么在判断测试印相时应该"先看阴影"？如果 ASA 300 的阴影可以接受但高光太亮，你该如何处理？为什么？
+
+**疑问 (questions)**
+用自己的话总结 13 步测试流程。你觉得哪一步最容易出错？对于可能出问题的地方，有什么预防措施？
+
+**下一步实践 (nextPractice)**
+计算 Expansion/Contraction 时间：如果 NDT=10 分钟，普通胶片 N+1/N+2/N-1/N-2 各是多少？T-Grain 胶片呢？
+
+---
+
+## Unit 10: Zone System Testing: Method 2
+
+**核心理念 (coreIdeas)**
+测试方法 2 与测试方法 1 的根本区别是什么？为什么方法 2 更适合有经验的摄影师？
+
+**我的理解 (myUnderstanding)**
+为什么有效胶片速度因显影液不同而变化？以 T-Max 400 在 HC-110 (ASA 400) 和 Perceptol (ASA 200) 中的表现差异为例来思考。
+
+**黑白摄影关联 (bwRelevance)**
+设计你自己的暗房日记格式：应包含哪些关键信息（日期/胶片/场景对比度/放置/显影时间/结果评价等）？为什么持续的记录对精确化你的标准如此重要？
+
+**疑问 (questions)**
+如果本书没有列出你正在使用的胶片或显影液，你该如何推断出合适的 ASA 和 Normal Development Time？
+
+**下一步实践 (nextPractice)**
+从本书推荐中选一个胶片/显影液组合开始使用，在暗房日记中记录至少 3 次拍摄和显影的结果，然后评估是否需要调整。
+
+---
+
+## Unit 11: The Zone System and Digital Photography
+
+**核心理念 (coreIdeas)**
+数码摄影的五大 Cardinal Rules 是什么？逐条用自己的话解释每一条背后的原因（为什么要用最低 ISO？为什么要拍 raw？为什么对高光曝光？）。
+
+**我的理解 (myUnderstanding)**
+参考 Figure 10.34（线性 raw 光谱），解释为什么 raw 文件的高光部分天生拥有更多 tonal levels 而阴影部分更少。"Expose to the Right" 如何利用了这一特性？
+
+**黑白摄影关联 (bwRelevance)**
+对比 Figure 10.27（欠曝后的直方图）和 Figure 10.31（正确曝光后的直方图），为什么向右曝光可以减少 banding（条纹）？在你自己的照片中是否观察到过类似现象？
+
+**疑问 (questions)**
+高位深度 (16 bit) vs 高分辨率——参考 Figure 10.7 的楼梯比喻，解释为什么两者都很重要但 bit depth 在后期编辑中尤为关键。
+
+**下一步实践 (nextPractice)**
+用 raw 格式拍一张高对比度的照片，在 Adobe Camera Raw 或 Lightroom 中尝试高光恢复。然后尝试用 HDR 方法（至少 5 张包围曝光合成）处理同一场景——比较两者的效果。
+
+---
+
+## Unit 12: The Zone System and Studio Photography
+
+**核心理念 (coreIdeas)**
+摄影的两种创作模式——Discovery（发现）和 Fabrication（制造）各有什么特点？Zone System 如何分别服务于这两种模式？
+
+**我的理解 (myUnderstanding)**
+"在摄影棚中，只有光圈重要"——解释为什么快门速度在使用频闪灯时通常不决定曝光量。反平方法则 (Inverse Square Law) 又如何影响灯距和曝光的关系？
+
+**黑白摄影关联 (bwRelevance)**
+什么是 Key Aperture？在 Studio Zone Chart 中，如果将 Key Aperture f/11 放在 Zone V，那么 f/5.6 的测光读数将落在哪个 Zone？f/22 又落在哪个 Zone？为什么？
+
+**疑问 (questions)**
+入射式测光表为什么"从不撒谎"？它在什么情况下的局限性限制了它的用途？为什么复杂布光场景需要入射和点测光结合使用？
+
+**下一步实践 (nextPractice)**
+即使没有专业影棚，用一盏台灯或窗户光在暗室中做一个简单实验：拍一张灰色卡纸，验证入射式测光读数确实能正确还原灰卡的 Zone V——并观察其他物体的 Zone 是否正确"落位"。
+
+---
+
+## 附录: Appendices（参考单元）
+
+**核心理念 (coreIdeas)**
+在附录中，你学到了哪些在主章节中没有详细展开但对你重要的知识？
+
+**我的理解 (myUnderstanding)**
+附录 G（基础胶片摄影入门）和附录 H（胶片/显影液/冲洗）中，哪些内容解答了你之前的疑惑？
+
+**黑白摄影关联 (bwRelevance)**
+附录 V（Zone System 应用实例）中的案例是否让你对 Zone System 有了新的认识？哪个案例最让你印象深刻？
+
+**疑问 (questions)**
+附录中有哪些内容你还需要进一步查阅或实践才能完全理解？
+
+**下一步实践 (nextPractice)**
+选择 2-3 个与你工作流程最相关的附录深入阅读，并在实践中应用其中的建议。

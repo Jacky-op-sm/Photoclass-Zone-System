@@ -316,8 +316,8 @@
     statusEl.textContent = getStatusLabel(status);
     card.appendChild(statusEl);
 
-    // Progress bar (only for core units)
-    if (unit.type === 'core') {
+    // Progress bar (for all units including reference)
+    if (unit.type === 'core' || unit.type === 'reference') {
       const progressDiv = document.createElement('div');
       progressDiv.className = 'unit-card-progress';
       if (cp.percentage === 0) progressDiv.classList.add('is-empty');
@@ -333,13 +333,13 @@
       card.appendChild(progressDiv);
     }
 
-    // Last studied
+    // Last studied (always render as height placeholder for uniform cards)
+    const last = document.createElement('div');
+    last.className = 'unit-card-last';
     if (lastStudied) {
-      const last = document.createElement('div');
-      last.className = 'unit-card-last';
       last.textContent = 'Last studied: ' + lastStudied;
-      card.appendChild(last);
     }
+    card.appendChild(last);
 
     return card;
   }

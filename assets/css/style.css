@@ -410,6 +410,7 @@ textarea:focus-visible {
   color: var(--text-primary);
   flex: 1;
   min-width: 0;
+  min-height: 2.7rem; /* ensure uniform card height: 2 lines */
 }
 
 .unit-card-check {
@@ -426,7 +427,10 @@ textarea:focus-visible {
   font-size: 0.78rem;
   font-weight: 600;
   letter-spacing: -0.01em;
-  margin-bottom: 0.6rem;
+  min-height: 1.5rem;
+  line-height: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.1rem;
 }
 
 .unit-card-progress {
@@ -447,6 +451,7 @@ textarea:focus-visible {
   font-size: 0.78rem;
   color: var(--text-muted);
   margin-top: auto;
+  min-height: 1.2rem; /* placeholder for uniform card height */
 }
 
 @media (max-width: 600px) {
